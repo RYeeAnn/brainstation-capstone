@@ -1,0 +1,50 @@
+@use '../../partials/styles/mixins.scss' as *;
+@use '../../partials/styles/variables.scss' as *;
+
+.homePage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; 
+  background-image: url(../../assets/japanroads.jpg);
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__hero {
+    position: relative;
+    height: 400px;
+  }
+}
+
+.homePage__cards--container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: linear-gradient(135deg, #044056, #18081f, #110063);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+.homePage__card {
+  margin: 0 1rem;
+  padding: 1rem;
+  color: pink;
+}
+
+.homePage__img {
+  max-width: 100%;
+  height: auto;
+}

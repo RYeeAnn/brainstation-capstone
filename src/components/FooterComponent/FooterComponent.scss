@@ -1,0 +1,32 @@
+@use '../../partials/styles/mixins.scss' as *;
+@use '../../partials/styles/variables.scss' as *;
+
+.footer {
+  background-color: #000;
+  color: #0ff;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  overflow: hidden;
+
+  .footer__content {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    &--title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 3px;
+      color: rgb(6, 50, 50);
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #f06d06, 0 0 30px #f06d06, 0 0 40px #f06d06, 0 0 50px #f06d06;
+      margin-top: 0;
+    }
+
+    &--description {
+      font-size: 0.8rem;
+      color: #0ff;
+      margin-top: 0.5rem;
+    }
+  }
+}

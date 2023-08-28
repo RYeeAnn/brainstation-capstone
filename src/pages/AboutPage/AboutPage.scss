@@ -1,0 +1,41 @@
+/* AboutPage.scss */
+.about {
+    /* Set your background styles or image */
+    /* ... */
+  
+    .about__content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+    }
+  
+    .about__image {
+      flex: 1;
+      max-width: 50%;
+      padding: 1rem;
+  
+      img {
+        width: 100%;
+        border-radius: 8px;
+      }
+    }
+  
+    .about__text {
+      flex: 1;
+      padding: 1rem;
+  
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        color: #666;
+        line-height: 1.6;
+      }
+    }
+  }
+  

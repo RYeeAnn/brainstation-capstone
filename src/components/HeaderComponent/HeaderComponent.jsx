@@ -23,10 +23,10 @@ function HeaderComponent() {
         )}
       </div>
       <div className="header-title">
-        <h1 className='header-title__item'>MidnightRide</h1>
+        <h1 className='header-title__item'>Cruisin</h1>
       </div>
       <div className="header-login">
-        <a href="#">Log In</a>
+        <a href="">Log In</a>
       </div>
     </section>
   );

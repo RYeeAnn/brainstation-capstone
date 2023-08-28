@@ -5,7 +5,7 @@ function FooterComponent() {
         <section className="footer">
           <div className="footer__content">
             <p className="footer__content--title">
-            Mightnight Ride
+            Cruisin
             </p>
             <p className="footer-_content--description">
             2023 __ Inc. All rights reserved.

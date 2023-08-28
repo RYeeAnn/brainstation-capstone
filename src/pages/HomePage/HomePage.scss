@@ -4,8 +4,8 @@
 .homePage {
   position: relative;
   width: 100%;
-  min-height: 100vh; 
-  background-image: url(../../assets/japanroads.jpg);
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../assets/japanroads.jpg);
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -19,8 +19,51 @@
   &__hero {
     position: relative;
     height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out both;
+  }
+
+  &__heroText {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-in-out 0.5s both;
+    color: rgb(153, 143, 3);
+
+    @include tablet {
+      padding-top: 180px;
+    }
+    
+    @include desktop {
+      padding-top: 100px;
+    }
+  }
+
+  &__heroSubtext {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-top: 1rem;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-in-out 1s both;
   }
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .homePage__cards--container {
   display: flex;
@@ -47,4 +90,13 @@
 .homePage__img {
   max-width: 100%;
   height: auto;
+  border-radius: 50px;
+
+  &:hover {
+    opacity: 50%;
+  }
+}
+
+.homePage__text {
+  text-decoration: none;
 }

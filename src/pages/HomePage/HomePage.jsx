@@ -13,31 +13,31 @@ function HomePage() {
     <>
       <section className="homePage">
         <HeaderComponent />
-        <div className="homePage__hero"></div>
+        <div className="homePage__hero homePage__heroText">Making your life easier in cruise</div>
       </section>
 
       <section className="homePage__main">
         <div className="homePage__cards">
           <ul className="homePage__cards--container">
-            <Link to='./MaintenancePage'>
+            <Link className='homePage__text' to='./MaintenancePage'>
               <li className="homePage__card">
                 <img className="homePage__img" src={engine} alt="hood" />
                 Maintenance
               </li>
             </Link>
-            <Link to='./WarningLightsPage'>
+            <Link className='homePage__text' to='./WarningLightsPage'>
               <li className="homePage__card">
                 <img className="homePage__img" src={speedometer} alt="speedometer" />
                 Warning Lights
               </li>
             </Link>
-            <Link to='./CommonQuestionsPage'>
+            <Link className='homePage__text' to='./FAQPage'>
               <li className="homePage__card">
                 <img className="homePage__img" src={wipe} alt="wipe" />
-                Common Questions
+                FAQ
               </li>
             </Link>
-            <Link to='./TroubleshootPage'>
+            <Link className='homePage__text' to='./TroubleshootPage'>
               <li className="homePage__card">
                 <img className="homePage__img" src={tools} alt="tools" />
                 Troubleshoot

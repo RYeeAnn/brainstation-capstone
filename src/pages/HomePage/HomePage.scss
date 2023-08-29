@@ -34,10 +34,7 @@
     opacity: 0;
     animation: fadeInUp 1.5s ease-in-out 0.5s both;
     color: rgb(153, 143, 3);
-
-    @include tablet {
-      padding-top: 180px;
-    }
+    padding-top: 50px;
     
     @include desktop {
       padding-top: 100px;

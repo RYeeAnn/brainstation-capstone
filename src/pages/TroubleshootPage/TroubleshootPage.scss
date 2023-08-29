@@ -1,0 +1,70 @@
+.troubleshoot {
+    display: flex;
+    flex-direction: column;
+
+    &__selectandbutton {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+  
+  
+    &__question {
+      text-align: center;
+      margin: 2rem 0;
+  
+      select {
+        background-color: #191919;
+        color: #fff;
+        border: none;
+        padding: 0.5rem;
+        font-size: 16px;
+        border-radius: 5px;
+        outline: none;
+      }
+  
+      button {
+        background-color: #6d00ff;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        outline: none;
+      }
+    }
+  
+    &__response {
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+      border: 2px solid #6d00ff;
+      border-radius: 10px;
+      margin: 2rem;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+      &__solutions {
+        text-align: center;
+        margin: 1rem 0;
+  
+        &--title {
+          font-size: 24px;
+          color: #6d00ff;
+        }
+  
+        &--solution,
+        &--instructions,
+        &--tools {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &__solutions {
+        border-bottom: 2px solid pink;
+    }
+  }
+  

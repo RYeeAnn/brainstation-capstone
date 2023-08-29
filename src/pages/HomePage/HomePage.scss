@@ -4,7 +4,6 @@
 .homePage {
   position: relative;
   width: 100%;
-  min-height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../assets/japanroads.jpg);
   background-size: cover;
   background-position: center bottom;
@@ -17,13 +16,18 @@
   }
 
   &__hero {
-    position: relative;
-    height: 400px;
     display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 600px;
     justify-content: center;
     align-items: center;
     text-align: center;
     animation: fadeIn 1s ease-in-out both;
+
+    @include desktop {
+      height: 670px;
+    }
   }
 
   &__heroText {
@@ -33,12 +37,7 @@
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
     opacity: 0;
     animation: fadeInUp 1.5s ease-in-out 0.5s both;
-    color: rgb(153, 143, 3);
-    padding-top: 50px;
-    
-    @include desktop {
-      padding-top: 100px;
-    }
+    color: rgb(192, 190, 175);
   }
 
   &__heroSubtext {
@@ -47,6 +46,26 @@
     margin-top: 1rem;
     opacity: 0;
     animation: fadeInUp 1.5s ease-in-out 1s both;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+    color: rgb(199, 193, 181);
+  }
+
+  &__main {
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__card {
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding-bottom: 16px;
+  }
+
+  &__img {
+    width: 100%;
   }
 }
 
@@ -59,41 +78,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-
-.homePage__cards--container {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background: linear-gradient(135deg, #044056, #18081f, #110063);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  @include tablet {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-}
-
-.homePage__card {
-  margin: 0 1rem;
-  padding: 1rem;
-  color: pink;
-}
-
-.homePage__img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 50px;
-
-  &:hover {
-    opacity: 50%;
-  }
-}
-
-.homePage__text {
-  text-decoration: none;
 }

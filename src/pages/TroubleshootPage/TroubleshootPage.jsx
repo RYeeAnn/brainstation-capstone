@@ -42,30 +42,42 @@ function TroubleshootPage() {
       </div>
       <div className="troubleshoot__question">
         <h2>Let's try to find a solution!</h2>
-<div className="troubleshoot__selectandbutton">
-        <select value={selectedIssue} onChange={handleIssueChange}>
-          <option value="">Select an issue...</option>
-          {issues.map((issue) => (
-            <option key={issue.id}>
-              {issue.problem}
-            </option>
-          ))}
-        </select>
-        <button onClick={handleSubmit}>Submit</button>
-      </div>
+        <div className="troubleshoot__selectandbutton">
+          <select value={selectedIssue} onChange={handleIssueChange}>
+            <option value="">Select an issue...</option>
+            {issues.map((issue) => (
+              <option key={issue.id}>
+                {issue.problem}
+              </option>
+            ))}
+          </select>
+          <button onClick={handleSubmit}>Submit</button>
+        </div>
       </div>
       {response.length > 0 && (
         <div className="troubleshoot__response">
           {response.map((solution, index) => (
             <div className="troubleshoot__solutions" key={index}>
               <h1 className="troubleshoot__solutions--title">Solution {index + 1}</h1>
-              <p className="troubleshoot__solutions--solution">Solution: {solution.solution}</p>
-              <p className="troubleeshoot__solutions--instructions">Instructions: {solution.instructions}</p>
-              <p className="troubleshoot__solutions--tools">Tools Required: {solution.tools_required}</p>
+              <p>{solution.solution}</p>
+              <p className="troubleshoot__solutions--instructions">Instructions:</p>
+              {solution.instructions.split("\n\n").map((paragraph, paragraphIndex) => (
+                <p key={paragraphIndex}>{paragraph}</p>
+              ))}
+              <p className="troubleshoot__solutions--tools">Tools Required:</p>
+              <p>{solution.tools_required}</p>
             </div>
           ))}
         </div>
       )}
+      <div className="troubleshoot__comments">
+        <input type="" />
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button>submit</button>
+      </div>
+      <div className="troubleshoot__responses">
+        test
+      </div>
     </section>
   );
 }

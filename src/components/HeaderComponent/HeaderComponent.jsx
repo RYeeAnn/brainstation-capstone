@@ -25,9 +25,6 @@ function HeaderComponent() {
       <div className="header-title">
         <h1 className='header-title__item'>Cruisin</h1>
       </div>
-      <div className="header-login">
-        <a href="">Log In</a>
-      </div>
     </section>
   );
 }

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import SecondHeaderComponent from "../../components/SecondHeaderComponent/SecondHeaderComponent";
 import "./TroubleshootPage.scss";
@@ -11,7 +13,8 @@ function TroubleshootPage() {
   const [response, setResponse] = useState([]);
   const [userComment, setUserComment] = useState("");
   const [userComments, setUserComments] = useState([]);
-  const [userName, setUserName] = useState(""); // Initialize the user's name state
+  const [userName, setUserName] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     axios
@@ -24,14 +27,20 @@ function TroubleshootPage() {
       });
   }, []);
 
+  useEffect(() => {
+    // console.log('userComments', userComments)
+  }, [userComments]);
+
   const handleIssueChange = (event) => {
     setSelectedIssue(event.target.value);
   };
 
   const handleSubmit = () => {
+    console.log("submit form");
     axios
       .post(`${PORT}/troubleshootPage`, { question: selectedIssue })
       .then((response) => {
+        console.log("post", response.data);
         setResponse(response.data);
       })
       .catch((error) => {
@@ -39,19 +48,43 @@ function TroubleshootPage() {
       });
   };
 
-  const handleCommentSubmit = () => {
+  const handleCommentSubmit = (event) => {
+    event.preventDefault();
+
     const commentData = {
       name: userName,
       comment: userComment,
     };
 
+    const toastMessage = () => {
+      toast.success("Comment submitted!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    };
+
+    if (!userName || !userComment) {
+      toast.error("Please fill in both your name and comment!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      return;
+    }
+
     axios
       .post(`${PORT}/troubleshootPage/comments`, commentData)
-      .then(() => {
-        setUserComments([commentData, ...userComments]);
+      .then((response) => {
+        console.log("response", response);
+
+        // setUserComments([commentData, ...userComments]);
         setUserComment("");
         setUserName("");
+        toastMessage();
+
+        return axios.get(`${PORT}/troubleshootPage/comments`);
       })
+      .then((response) => {
+        setUserComments(response.data);
+      })
+
       .catch((error) => {
         console.error("Error submitting comment:", error);
       });
@@ -68,10 +101,18 @@ function TroubleshootPage() {
       });
   }, []);
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <section className="troubleshoot">
+    <section className={`troubleshoot ${darkMode ? "dark-mode" : ""}`}>
       <div className="troubleshoot__header">
         <SecondHeaderComponent />
+        <ToastContainer />
+        <button onClick={toggleDarkMode}>
+          {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+        </button>
       </div>
       <div className="troubleshoot__question">
         <h2>Let's try to find a solution!</h2>
@@ -107,16 +148,19 @@ function TroubleshootPage() {
           ))}
         </div>
       )}
-      <div className="troubleshoot__comments">
+      <form
+        onSubmit={handleCommentSubmit}
+        className={`troubleshoot__comments ${darkMode ? "dark-mode" : ""}`}
+      >
         <input
-          className="troubleshoot__name"
+          className={`troubleshoot__name ${darkMode ? "dark-mode" : ""}`}
           placeholder="Enter your name..."
           type=""
           value={userName}
           onChange={(event) => setUserName(event.target.value)}
         />
         <textarea
-          className="troubleshoot__comment"
+          className={`troubleshoot__comment ${darkMode ? "dark-mode" : ""}`}
           placeholder="Enter comment..."
           name=""
           value={userComment}
@@ -125,16 +169,19 @@ function TroubleshootPage() {
           cols="30"
           rows="10"
         ></textarea>
-        <button onClick={handleCommentSubmit} className="troubleshoot__submit">
-          Enter!
-        </button>
-      </div>
+        <button className="troubleshoot__submit">Enter!</button>
+      </form>
       <div className="troubleshoot__responses">
-        {/* Display user comments */}
         {userComments.map((comment, index) => (
-          <div key={index} className="troubleshoot__userComment">
+          <div
+            key={index}
+            className={`troubleshoot__userComment ${
+              darkMode ? "dark-mode" : ""
+            }`}
+          >
             <p>{comment.name}</p>
             <p>{comment.comment}</p>
+            <p>{new Date(comment.created_at).toLocaleString()}</p>
           </div>
         ))}
       </div>

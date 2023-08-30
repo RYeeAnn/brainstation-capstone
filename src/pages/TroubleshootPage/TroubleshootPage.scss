@@ -2,6 +2,10 @@
     display: flex;
     flex-direction: column;
 
+    &__header {
+      text-align: center;
+    }
+
     &__selectandbutton {
         display: flex;
         justify-content: center;
@@ -147,5 +151,47 @@
     &__responses {
       text-align: center;
     }
+
+    &.dark-mode {
+      background-color: #1a1a1a; /* Dark background color */
+      color: #ffffff;
+    }
+
+    &__comments.dark-mode {
+      background-color: #1a1a1a;
+      color: #ffffff;
+    }
+
+    &__comment.dark-mode {
+      background-color: #1a1a1a;
+      color: #ffffff;
+    }
+
+    &__name.dark-mode {
+      background-color: #1a1a1a;
+      color: #ffffff;
+    }
+
+    &__userComment.dark-mode {
+      background-color: #1a1a1a;
+      color: #ffffff;
+    }
+
+    .dark-mode-toggle {
+    margin-top: 20px;
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
   }
   

@@ -1,70 +1,13 @@
-# Getting Started with Create React App
+Project Overview
+1.1 Description
+Cruisin is your go-to solution for making your car ownership experience easier. With Cruisin, you can effortlessly demystify vehicle issues and empower yourself to tackle common problems head-on. Our cyberpunk-themed platform provides step-by-step guides, interactive diagnostics, and expert advice, all wrapped in a futuristic design that transforms learning about cars into an exciting journey. Say goodbye to uncertainty and hello to confidence with Cruisin.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1.2 Problem
+Cruisin addresses the common challenges faced by car owners who lack automotive knowledge when it comes to diagnosing and troubleshooting issues with their vehicles. Many people find themselves in situations where they encounter unusual sounds, warning lights, or performance problems, but lack the expertise to identify the root cause. This knowledge gap often leads to frustration, panic, and unnecessary expenses at auto repair shops.
 
-## Available Scripts
+1.3 User Profile
+The end users of Cruisin are individuals, typically everyday drivers who own cars but lack in-depth knowledge about their own vehicles.They may have encountered problems like strange noises, warning lights, or performance issues that may cause them rolling into auto repair shops in a state of panic, and end up paying unnecessary expenses. Cruisin aims to bridge this gap by offering a platform where users can identify issues they can possibly repair themselves.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1.4 Requirements: Use Cases and Features
+Diagnostic search and guides where users can search specific car problems using keywords.
+Troubleshoot solutions where it can provide guidance on when to attempt DIY fixes and when to seek professional help.

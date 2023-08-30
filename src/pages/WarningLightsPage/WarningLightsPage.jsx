@@ -23,6 +23,7 @@ import washerFluidIcon from '../../assets/washer-fluid.png';
 
 function WarningLightsPage() {
   const [selectedWarning, setSelectedWarning] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
 
   const warningLightsData = [
     { id: 1, title: 'Oil Pressure', description: 'Oil pressure is low.', icon: oilPressureIcon },
@@ -47,6 +48,7 @@ function WarningLightsPage() {
   ];
   
 
+
   const handleWarningClick = (warningId) => {
     setSelectedWarning(warningId);
   };
@@ -55,22 +57,31 @@ function WarningLightsPage() {
     setSelectedWarning(null);
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <section className="warningLights">
+    <section className={`warningLights ${darkMode ? 'dark-mode' : ''}`}>
       <div className="WarningLights__header">
         <SecondHeaderComponent />
+        <button onClick={toggleDarkMode}>
+          {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+        </button>
       </div>
       <h1>Warning Lights</h1>
       <div className="warningLights__content">
-          {warningLightsData.map(warning => (
-            <div
-              key={warning.id}
-              className="warningLights__icon"
-              onClick={() => handleWarningClick(warning.id)}
-            >
-              <img src={warning.icon} alt={warning.title} />
-            </div>
-          ))}
+        {warningLightsData.map(warning => (
+          <div
+            key={warning.id}
+            className="warningLights__icon"
+            onClick={() => handleWarningClick(warning.id)}
+          >
+            <img src={warning.icon} alt={warning.title} />
+          </div>
+        ))}
+      </div>
+      <div className="warningLights__dark-mode-toggle">
       </div>
       {selectedWarning !== null && (
         <div className="warningLights-modal">

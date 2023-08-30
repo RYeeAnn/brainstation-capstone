@@ -8,7 +8,7 @@ function FooterComponent() {
             Cruisin
             </p>
             <p className="footer-_content--description">
-            2023 __ Inc. All rights reserved.
+              
             </p>
           </div>
         </section>

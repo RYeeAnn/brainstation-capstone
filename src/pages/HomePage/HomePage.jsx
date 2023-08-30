@@ -17,8 +17,7 @@ function HomePage() {
           <div className="homePage__heroText">
             Ever faced a frustrating issue and wondered how to fix it? Welcome
             to Cruisin, where we have answers to your questions and solutions
-            to your problems. Join us in unraveling the mysteries of
-            troubleshooting.
+            to your problems.
           </div>
           <div className="homePage__heroSubtext">Start Exploring</div>
         </div>

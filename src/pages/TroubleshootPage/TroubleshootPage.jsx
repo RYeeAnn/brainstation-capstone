@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useSpring, animated } from "react-spring";
 import axios from "axios";
 import SecondHeaderComponent from "../../components/SecondHeaderComponent/SecondHeaderComponent";
 import "./TroubleshootPage.scss";
@@ -28,19 +29,24 @@ function TroubleshootPage() {
   }, []);
 
   useEffect(() => {
-    // console.log('userComments', userComments)
-  }, [userComments]);
+    axios
+      .get(`${PORT}/troubleshootPage/comments`)
+      .then((response) => {
+        setUserComments(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching comments:", error);
+      });
+  }, []);
 
   const handleIssueChange = (event) => {
     setSelectedIssue(event.target.value);
   };
 
   const handleSubmit = () => {
-    console.log("submit form");
     axios
       .post(`${PORT}/troubleshootPage`, { question: selectedIssue })
       .then((response) => {
-        console.log("post", response.data);
         setResponse(response.data);
       })
       .catch((error) => {
@@ -71,10 +77,7 @@ function TroubleshootPage() {
 
     axios
       .post(`${PORT}/troubleshootPage/comments`, commentData)
-      .then((response) => {
-        console.log("response", response);
-
-        // setUserComments([commentData, ...userComments]);
+      .then(() => {
         setUserComment("");
         setUserName("");
         toastMessage();
@@ -84,25 +87,52 @@ function TroubleshootPage() {
       .then((response) => {
         setUserComments(response.data);
       })
-
       .catch((error) => {
         console.error("Error submitting comment:", error);
       });
   };
 
-  useEffect(() => {
-    axios
-      .get(`${PORT}/troubleshootPage/comments`)
-      .then((response) => {
-        setUserComments(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching comments:", error);
-      });
-  }, []);
+  const properties = {
+    dark: {
+      r: 9,
+      transform: "rotate(40deg)",
+      cx: 12,
+      cy: 4,
+      opacity: 0,
+    },
+    light: {
+      r: 5,
+      transform: "rotate(90deg)",
+      cx: 30,
+      cy: 0,
+      opacity: 1,
+    },
+    springConfig: { mass: 4, tension: 250, friction: 35 },
+  };
+
+  const { r, transform, cx, cy, opacity } =
+    properties[darkMode ? "dark" : "light"];
+
+  const svgContainerProps = useSpring({
+    transform,
+    config: properties.springConfig,
+  });
+  const centerCircleProps = useSpring({
+    r,
+    config: properties.springConfig,
+  });
+  const maskedCircleProps = useSpring({
+    cx,
+    cy,
+    config: properties.springConfig,
+  });
+  const linesProps = useSpring({
+    opacity,
+    config: properties.springConfig,
+  });
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((previous) => !previous);
   };
 
   return (
@@ -110,11 +140,61 @@ function TroubleshootPage() {
       <div className="troubleshoot__header">
         <SecondHeaderComponent />
         <ToastContainer />
-        <button onClick={toggleDarkMode}>
-          {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-        </button>
       </div>
       <div className="troubleshoot__question">
+      <animated.svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          stroke="currentColor"
+          onClick={toggleDarkMode}
+          style={{
+            cursor: "pointer",
+            ...svgContainerProps,
+          }}
+        >
+          <mask id="myMask2">
+            <rect x="0" y="0" width="100%" height="100%" fill="white" />
+            {/* <animated.circle style={maskedCircleProps} r="9" fill="black" /> */}
+          </mask>
+          <animated.circle
+            cx="12"
+            cy="12"
+            style={centerCircleProps}
+            fill="black"
+            mask="url(#myMask2)"
+          />
+          <animated.g stroke="currentColor" style={linesProps}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle fill="black" cx="12" cy="12" r="5" />
+              <g stroke="currentColor">
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </g>
+            </svg>
+          </animated.g>
+        </animated.svg>
         <h2>Let's try to find a solution!</h2>
         <div className="troubleshoot__selectandbutton">
           <select value={selectedIssue} onChange={handleIssueChange}>
@@ -137,11 +217,13 @@ function TroubleshootPage() {
               <p className="troubleshoot__solutions--instructions">
                 Instructions:
               </p>
-              {solution.instructions
+              {/* Dangerously syntax to my instructions into ordered list*/}
+              <div className="troubleshoot__solitions--instructions--list" dangerouslySetInnerHTML={{__html: solution.instructions}} />
+              {/* {solution.instructions
                 .split("\n\n")
                 .map((paragraph, paragraphIndex) => (
                   <p key={paragraphIndex}>{paragraph}</p>
-                ))}
+                ))} */}
               <p className="troubleshoot__solutions--tools">Tools Required:</p>
               <p>{solution.tools_required}</p>
             </div>
@@ -179,9 +261,13 @@ function TroubleshootPage() {
               darkMode ? "dark-mode" : ""
             }`}
           >
-            <p>{comment.name}</p>
-            <p>{comment.comment}</p>
-            <p>{new Date(comment.created_at).toLocaleString()}</p>
+            <div className="troubleshoot__userComment--namedate">
+            <p className="troubleshoot__userComment--name">{comment.name}</p>
+            <p className="troubleshoot__userComment--date">{new Date(comment.created_at).toLocaleString()}</p>
+            </div>
+            <div className="troubleshoot__userComment--commentContainer">
+            <p className="troubleshoot__userComment--comment">{comment.comment}</p>
+            </div>
           </div>
         ))}
       </div>

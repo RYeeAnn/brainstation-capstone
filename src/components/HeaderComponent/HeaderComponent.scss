@@ -1,37 +1,16 @@
+@use '../../partials/styles/mixins.scss' as *;
+@use '../../partials/styles/variables.scss' as *;
 
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  padding-top: 1rem;
   background-color: transparent;
   color: #0ff;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-
-  .header-title {
-    position: relative;
-
-    &__item {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 3px;
-      color: rgb(6, 50, 50);
-      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #f06d06, 0 0 30px #f06d06, 0 0 40px #f06d06, 0 0 50px #f06d06;
-    }
-  }
-}
-
-@keyframes flicker {
-  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-    opacity: 1;
-    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #f06d06, 0 0 30px #f06d06, 0 0 40px #f06d06, 0 0 50px #f06d06;
-  }
-  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-    opacity: 0.1;
-    text-shadow: none;
-  }
 }
 
 .pulse {
@@ -49,7 +28,7 @@
 
 .header-dropdown {
   position: relative;
-  margin-left: 1rem; /* Adjust spacing */
+  margin-left: 1rem;
 }
 
 .dropdown-button {
@@ -57,8 +36,7 @@
   background-color: transparent;
   font-size: 1rem;
   letter-spacing: 3px;
-  color: rgb(6, 50, 50);
-  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #f06d06, 0 0 30px #f06d06, 0 0 40px #f06d06, 0 0 50px #f06d06;
+  color: rgb(11, 183, 183);
 }
 
 .dropdown-content {
@@ -66,6 +44,7 @@
   top: 100%;
   left: 0;
   display: flex;
+  gap: 1rem;
   flex-direction: column;
   background-color: #000;
   border: 1px solid #0ff;

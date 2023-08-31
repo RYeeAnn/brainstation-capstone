@@ -15,9 +15,13 @@ function HomePage() {
         <HeaderComponent />
         <div className="homePage__hero">
           <div className="homePage__heroText">
-            Ever faced a frustrating issue and wondered how to fix it? Welcome
+            <h1 className="homePage__title">
+              Cruisin
+            </h1>
+            <p>Ever faced a frustrating issue and wondered how to fix it? Welcome
             to Cruisin, where we have answers to your questions and solutions
             to your problems.
+            </p>
           </div>
           <div className="homePage__heroSubtext">Start Exploring</div>
         </div>

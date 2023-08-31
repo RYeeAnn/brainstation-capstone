@@ -17,13 +17,10 @@ function HeaderComponent() {
         </button>
         {isDropdownOpen && (
           <div className="dropdown-content">
-            <Link to='./AboutPage'><li>About Us</li></Link>
-            <li>Contact Us</li>
+            <Link to='./AboutPage'><li>About me</li></Link>
+            <li>Contact me</li>
           </div>
         )}
-      </div>
-      <div className="header-title">
-        <h1 className='header-title__item'>Cruisin</h1>
       </div>
     </section>
   );

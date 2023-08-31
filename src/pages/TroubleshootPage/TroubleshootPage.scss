@@ -1,3 +1,6 @@
+@use '../../partials/styles/mixins.scss' as *;
+@use '../../partials/styles/variables.scss' as *;
+
 .troubleshoot {
     display: flex;
     flex-direction: column;
@@ -11,7 +14,6 @@
         justify-content: center;
         gap: 2rem;
     }
-  
   
     &__question {
       text-align: center;
@@ -30,7 +32,6 @@
       button {
         background-color: black;
         color: rgb(6, 50, 50);
-        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #f06d06, 0 0 30px #f06d06, 0 0 40px #f06d06, 0 0 50px #f06d06;
         color: #fff;
         border: none;
         padding: 0.5rem 1rem;
@@ -45,57 +46,41 @@
       display: flex;
       flex-direction: column;
       color: #fff;
-      border: 2px solid #6d00ff;
+      border: 2px solid black;
       border-radius: 10px;
-      margin: 2rem;
-      padding: 2rem;
+      padding: 16px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../assets/car-aesthetic.gif);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-  
-      &__solutions {
-        text-align: center;
-        margin: 1rem 0;
-  
-        &--title {
-          font-size: 24px;
-          color: #6d00ff;
-        }
-  
-        &--solution,
-        &--instructions,
-        &--tools {
-          font-size: 16px;
-        }
-      }
     }
 
     &__solutions {
-        border-bottom: 2px solid pink;
+        border-bottom: 2px solid yellow;
         padding-bottom: 16px;
-        text-align: center;
+        font-size: 10px;
 
         &--title {
             text-align: center;
-            font-size: 30px;
+            font-size: 10px;
+            color: yellow;
         }
 
         &--solution {
-            color: pink;
-            font-size: 24px;
+            color: yellow;
+            font-size: 10px;
         }
 
         &--instructions {
-            color: pink;
-            font-size: 24px;
+            color: yellow;
+            font-size: 10px;
         }
 
         &--tools {
-            color: pink;
-            font-size: 24px;
+            color: yellow;
+            font-size: 10px;
         }
     }
 
@@ -125,13 +110,29 @@
 
     &__userComment {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #f4f4f4;
+      flex-direction: column;
+      font-size: 12px;
       padding: 10px;
+      background-color: #f4f4f4;
       border-radius: 5px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       margin-top: 10px;
+
+      &--namedate {
+        display: flex;
+        justify-content: space-between;
+        color: grey;
+        font-size: 8px;
+      }
+
+      &--comment {
+        font-size: 10px;
+        word-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 6em;
+        line-height: 1.5;
+      }
     }
 
     &__submit {
@@ -193,5 +194,9 @@
       }
     }
   }
+  }
+
+  li {
+    padding-bottom: 10px;
   }
   

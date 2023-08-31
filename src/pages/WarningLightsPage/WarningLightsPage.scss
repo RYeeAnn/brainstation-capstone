@@ -47,8 +47,12 @@
     align-items: center;
     z-index: 999;
 
+    .warningLights__modal--description {
+      padding-bottom: 16px;
+    }
+
     .warningLights__modal--content {
-      background-color: #292929; /* Dark modal background color */
+      background-color: black;
       color: #ffffff;
       padding: 20px;
       border-radius: 10px;

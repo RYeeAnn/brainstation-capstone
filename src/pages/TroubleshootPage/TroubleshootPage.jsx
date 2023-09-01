@@ -5,6 +5,7 @@ import { useSpring, animated } from "react-spring";
 import axios from "axios";
 import SecondHeaderComponent from "../../components/SecondHeaderComponent/SecondHeaderComponent";
 import "./TroubleshootPage.scss";
+import trash from "../../assets/trash.svg"
 
 const PORT = process.env.REACT_APP_API_SERVER;
 
@@ -89,6 +90,26 @@ function TroubleshootPage() {
       })
       .catch((error) => {
         console.error("Error submitting comment:", error);
+      });
+  };
+
+  const handleDeleteComment = (commentId) => {
+    console.log(commentId);
+    axios
+      .delete(`${PORT}/troubleshootPage/comments/${commentId}`)
+      .then(() => {
+        setUserComments((prevComments) =>
+          prevComments.filter((comment) => comment.id !== commentId)
+        );
+        toast.success("Comment deleted!", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+      })
+      .catch((error) => {
+        console.error("Error deleting comment:", error);
+        toast.error("Error deleting comment.", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
       });
   };
 
@@ -218,7 +239,7 @@ function TroubleshootPage() {
                 Instructions:
               </p>
               {/* Dangerously syntax to my instructions into ordered list*/}
-              <div className="troubleshoot__solitions--instructions--list" dangerouslySetInnerHTML={{__html: solution.instructions}} />
+              <div className="troubleshoot__solutions--instructions--list" dangerouslySetInnerHTML={{__html: solution.instructions}} />
               {/* {solution.instructions
                 .split("\n\n")
                 .map((paragraph, paragraphIndex) => (
@@ -267,6 +288,10 @@ function TroubleshootPage() {
             </div>
             <div className="troubleshoot__userComment--commentContainer">
             <p className="troubleshoot__userComment--comment">{comment.comment}</p>
+            </div>
+            <div className="troubleshoot__userComment--likedelete">
+            <p>like placeholder</p>
+            <img className="troubleshoot__userComment--icon" onClick={() => handleDeleteComment(comment.id)} src={trash} alt="trash" />
             </div>
           </div>
         ))}

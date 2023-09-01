@@ -4,7 +4,7 @@ import './MaintenancePage.scss';
 import oilChangeImage from '../../assets/oilchange.jpeg';
 import tiresImage from '../../assets/tirechange.jpeg';
 import brakePadsImage from '../../assets/brakechange.png';
-import ModalComponent from '../../components/ModalComponent/ModalComponent'; // Adjust the import path
+import ModalComponent from '../../components/ModalComponent/ModalComponent';
 
 function MaintenancePage() {
   return (

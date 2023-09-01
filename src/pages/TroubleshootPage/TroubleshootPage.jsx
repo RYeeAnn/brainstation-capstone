@@ -6,6 +6,7 @@ import axios from "axios";
 import SecondHeaderComponent from "../../components/SecondHeaderComponent/SecondHeaderComponent";
 import "./TroubleshootPage.scss";
 import trash from "../../assets/trash.svg"
+import heart from "../../assets/heart.svg"
 
 const PORT = process.env.REACT_APP_API_SERVER;
 
@@ -93,8 +94,29 @@ function TroubleshootPage() {
       });
   };
 
+  const handleLikeComment = (commentId) => {
+    // Send a request to the server to update the likes count
+    axios
+      .post(`${PORT}/troubleshootPage/like/${commentId}`)
+      .then(() => {
+        // Update the likes in the component's state
+        setUserComments((prevComments) =>
+          prevComments.map((comment) =>
+            comment.id === commentId
+              ? { ...comment, likes: comment.likes + 1 }
+              : comment
+          )
+        );
+      })
+      .catch((error) => {
+        console.error("Error liking comment:", error);
+        // Handle error as needed
+      });
+  };
+  
+  
+
   const handleDeleteComment = (commentId) => {
-    console.log(commentId);
     axios
       .delete(`${PORT}/troubleshootPage/comments/${commentId}`)
       .then(() => {
@@ -290,7 +312,7 @@ function TroubleshootPage() {
             <p className="troubleshoot__userComment--comment">{comment.comment}</p>
             </div>
             <div className="troubleshoot__userComment--likedelete">
-            <p>like placeholder</p>
+            <div className="troubleshoot__userComment--like" onClick={() => handleLikeComment(comment.id)}><img className="troubleshoot__userComment--like" src={heart} alt="Heart" />{comment.likes}</div>
             <img className="troubleshoot__userComment--icon" onClick={() => handleDeleteComment(comment.id)} src={trash} alt="trash" />
             </div>
           </div>

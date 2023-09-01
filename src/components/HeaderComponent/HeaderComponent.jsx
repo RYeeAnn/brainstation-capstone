@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './HeaderComponent.scss';
 import { Link } from 'react-router-dom';
+import menu from '../../assets/menu.png'
 
 function HeaderComponent() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -12,9 +13,8 @@ function HeaderComponent() {
   return (
     <section className="header"> 
       <div className="header-dropdown">
-        <button className="dropdown-button" onClick={handleDropdownToggle}>
-          Menu
-        </button>
+        <img src={menu} alt='Menu' className="dropdown-button" onClick={handleDropdownToggle}>
+        </img>
         {isDropdownOpen && (
           <div className="dropdown-content">
             <Link to='./AboutPage'><li>About me</li></Link>

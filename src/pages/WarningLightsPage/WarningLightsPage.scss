@@ -119,6 +119,10 @@
 }
 
 .icon-container img {
-  width: 50%;
-  border-radius: 70px;
+  width: 40%;
+  border-radius: 200px;
+
+  @include tablet {
+    width: 20%;
+  }
 }

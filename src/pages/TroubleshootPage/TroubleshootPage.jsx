@@ -238,10 +238,10 @@ function TroubleshootPage() {
             </svg>
           </animated.g>
         </animated.svg>
-        <h2>Let's try to find a solution!</h2>
+        <h2 className="troubleshoot__title">Let's try to find a solution!</h2>
         <div className="troubleshoot__selectandbutton">
-          <select value={selectedIssue} onChange={handleIssueChange}>
-            <option value="">Select an issue...</option>
+          <select className="troubleshoot__selectandbutton--text" value={selectedIssue} onChange={handleIssueChange}>
+            <option value="">Select an issue</option>
             {issues.map((issue) => (
               <option key={issue.id}>{issue.problem}</option>
             ))}

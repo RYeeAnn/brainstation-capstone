@@ -26,9 +26,9 @@ function WarningLightsPage() {
   const [selectedWarning, setSelectedWarning] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0)
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
 
   const warningLightsData = [
     {

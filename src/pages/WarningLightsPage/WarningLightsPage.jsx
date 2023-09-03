@@ -175,7 +175,6 @@ function WarningLightsPage() {
         "The washer fluid low warning light indicates that the vehicle's windshield washer fluid level is low. It's important to maintain an adequate washer fluid level to ensure clear visibility, especially in dirty or rainy conditions. Refill the washer fluid reservoir with an appropriate windshield washer fluid as needed.",
       icon: washerFluidIcon,
     },
-    // Add more warning lights data
   ];
 
   const handleWarningClick = (warningId) => {

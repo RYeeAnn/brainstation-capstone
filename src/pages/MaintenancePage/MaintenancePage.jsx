@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import SecondHeaderComponent from '../../components/SecondHeaderComponent/SecondHeaderComponent';
 import './MaintenancePage.scss';
 import oilChangeImage from '../../assets/oilchange.jpeg';
@@ -7,6 +8,11 @@ import brakePadsImage from '../../assets/brakechange.png';
 import ModalComponent from '../../components/ModalComponent/ModalComponent';
 
 function MaintenancePage() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+
   return (
     <section className="maintenance">
       <div className="maintenance__header">

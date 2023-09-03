@@ -1,4 +1,5 @@
 import React from "react";
+import { slide as Menu } from 'react-burger-menu';
 import FooterComponent from "../../components/FooterComponent/FooterComponent";
 import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
 import "./HomePage.scss";
@@ -9,6 +10,7 @@ import speedometer from "../../assets/speedo.jpg";
 import tools from "../../assets/tools.jpg";
 
 function HomePage() {
+
   return (
     <>
       <section className="homePage">

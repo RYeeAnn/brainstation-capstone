@@ -1,68 +1,106 @@
 @use '../../partials/styles/mixins.scss' as *;
 @use '../../partials/styles/variables.scss' as *;
 
-.header {
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 16px;
+  top: 16px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
   display: flex;
-  align-items: center;
-  padding-top: 2px;
-  background-color: transparent;
-  color: #0ff;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.pulse {
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-.header-dropdown {
-  position: relative;
-  margin-left: 1rem;
-}
-
-.dropdown-button {
-  font-family: 'Orbitron', sans-serif;
-  background-color: transparent;
-  font-size: 1rem;
-  letter-spacing: 3px;
-  color: rgb(11, 183, 183);
-}
-
-.dropdown-content {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: flex;
-  gap: 1rem;
   flex-direction: column;
-  background-color: #000;
-  padding: 0.5rem;
-  list-style: none;
+  gap: 32px;
 }
 
-.dropdown-content a {
-  color: #0ff;
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  color: white;
   text-decoration: none;
-  padding: 0.25rem 0.5rem;
 }
 
-.header-login {
-  margin-right: 1rem; /* Adjust spacing */
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }
 
-.header-login a {
-  color: #0ff;
-  text-decoration: none;
-  font-size: 1rem;
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family:'Verdana, sans-serif';
+
+  &__title {
+    color: pink;
+    font-size: 24px;
+  }
+
+  &__item {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__secondItem {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    padding-left: 5rem;
+    gap: 1rem;
+  }
+
+  &__secondItem1 {
+    padding-top: 4rem;
+  }
 }

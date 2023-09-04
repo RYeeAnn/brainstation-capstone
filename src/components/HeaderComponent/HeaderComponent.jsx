@@ -9,7 +9,7 @@ import at from "../../assets/@.svg";
 import alertTriangle from "../../assets/alert-triangle.svg"
 import tool from "../../assets/tool.svg";
 import messageCircle from "../../assets/message-circle.svg"
-import helpCircle from "../../assets/help-circle.svg"
+import camera from "../../assets/camera.svg"
 
 function HeaderComponent() {
   class Example extends React.Component {
@@ -32,9 +32,9 @@ function HeaderComponent() {
               <Link to="/aboutpage" id="about" className="menu__item"><img src={user} alt="User"/>About</Link>
               <Link to="contactpage" id="contact" className="menu__item" href="/contact"><img src={at} alt="At" />Contact</Link>
               <Link to="warningLightsPage" className="menu__secondItem menu__secondItem1"><img src={alertTriangle} alt="Alert" />Warning Lights</Link>
-              <Link to="troubleshootPage" className="menu__secondItem"><img src={tool} alt="Tool" />Troubleshoot</Link>
               <Link to="maintenancePage" className="menu__secondItem"><img src={messageCircle} alt="Message Circle" />Maintenance</Link>
-              <Link to="FAQPage" className="menu__secondItem"><img src={helpCircle} alt="Help Circle" />FAQ</Link>
+              <Link to="troubleshootPage" className="menu__secondItem"><img src={tool} alt="Tool" />Troubleshoot</Link>
+              <Link to="PhotoGalleryPage" className="menu__secondItem"><img src={camera} alt="Help Circle" />Photo Gallery</Link>
               </div>
             </main>
             </Menu>

@@ -41,20 +41,20 @@ function HomePage() {
         </div>
         <div className="homePage__card">
           <div className="homePage__imgContainer">
-            <Link to='/troubleshootPage'><img src={tools} alt="Tools" className="homePage__img" /></Link>
-          </div>
-          <div className="homePage__cardText">
-            <h3>Troubleshoot</h3>
-            <p>Explore troubleshooting guides for common car problems.</p>
-          </div>
-        </div>
-        <div className="homePage__card">
-          <div className="homePage__imgContainer">
             <Link to='/maintenancePage'><img src={repair} alt="Engine" className="homePage__img" /></Link>
           </div>
           <div className="homePage__cardText">
             <h3>Maintenance</h3>
             <p>Learn about essential car maintenance to keep your vehicle running smoothly.</p>
+          </div>
+        </div>
+        <div className="homePage__card">
+          <div className="homePage__imgContainer">
+          <Link to='/troubleshootPage'><img src={tools} alt="Tools" className="homePage__img" /></Link>
+          </div>
+          <div className="homePage__cardText">
+            <h3>Troubleshoot</h3>
+            <p>Explore troubleshooting guides for common car problems.</p>
           </div>
         </div>
         <div className="homePage__card">

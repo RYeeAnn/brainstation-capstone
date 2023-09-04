@@ -1,124 +1,277 @@
-import React from 'react';
-import { useEffect } from 'react';
-import SecondHeaderComponent from '../../components/SecondHeaderComponent/SecondHeaderComponent';
-import './MaintenancePage.scss';
-import oilChangeImage from '../../assets/oilchange.jpeg';
-import tiresImage from '../../assets/tirechange.jpeg';
-import brakePadsImage from '../../assets/brakechange.png';
-import ModalComponent from '../../components/ModalComponent/ModalComponent';
+import React, { useState, useEffect } from "react";
+import { useSpring, animated } from "react-spring";
+import SecondHeaderComponent from "../../components/SecondHeaderComponent/SecondHeaderComponent";
+import "./MaintenancePage.scss";
+import engineOil from "../../assets/engine-oil.png"
+import diagnosticTool from "../../assets/diagnostic-tool.png"
+import wheels from "../../assets/wheel.png";
+import brakes from "../../assets/brake-disc.png";
+import airFilter from "../../assets/air-filter.png"
+import cabinFilter from "../../assets/cabin-filter.png"
+import close from "../../assets/close-sign.png";
 
 function MaintenancePage() {
-  
+  const [selectedMaintenance, setSelectedMaintenance] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, []);
 
+  const maintenanceData = [
+    {
+      id: 1,
+      title: "Oil Change",
+      description: "Regular oil changes are essential for maintaining your vehicle's engine health and prolonging its lifespan. Here's a comprehensive guide to performing an oil change",
+      detailedDescription: (
+        <div>
+          <ul>
+            <li>Typically, it's every 7,000 to 10,000 kilometers or every 6 months.</li>
+            <li>Select the appropriate type and viscosity of motor oil based on your vehicle's specifications and the climate in your region.</li>
+            <li>0w-20, 5w-20, 5w-30 are the most common oil viscosities from thinnest to thickest.</li>
+          </ul>
+        </div>
+      ),
+      icon: engineOil,
+    },
+
+    {
+      id: 2,
+      title: "Check Engine Light",
+      description: "The check engine light, also known as the malfunction indicator light (MIL), indicates that the vehicle's onboard computer has detected a problem with the engine, emissions, or other related systems. It's recommended to use a diagnostic trouble code (DTC) scanner to retrieve the specific error code.",
+      detailedDescription: (
+        <div>
+          <ol>
+            <li>If you do not have a DTC scanner, you can usually go by an auto shop or dealership to get it scanned for free</li>
+            <li>Scanning DTC lights should always be free of charge so if they try to make you pay, deny it and find another auto shop or dealership to go to!</li>
+          </ol>
+        </div>
+      ),
+      icon: diagnosticTool,
+    },
+
+    {
+      id: 3,
+      title: "Tires",
+      description: "Maintaining your vehicle's tires is essential for safety and performance. Here are some DIY tire maintenance tips:",
+      detailedDescription: (
+        <div>
+          <ol>
+            <li>Depending on driving conditions, You should rotate your tires roughly every 8,000 to 15,000km.</li>
+            <li>FYI, if you're driving your car like a maniac and drifting all around... That means your tires will wear faster!</li>
+            <li>Check your tire pressures every now and then. generally on average vehicles roughly have 32-36psi</li>
+            <li>There is a sticker/placard that shows your specific vehicle's recommended tire pressure, typically located on the driver's side door jam</li>
+          </ol>
+        </div>
+      ),
+      icon: wheels
+    },
+
+    {
+      id: 4,
+      title: "Brake Pads",
+      description: "Regularly inspecting your brakes and addressing issues promptly helps maintain safe braking performance.",
+      detailedDescription:(
+        <div>
+          <ol>
+            <li>Periodically check brake pad thickness. If they are worn down to around 1/8 inch or less, it's time to replace them.</li>
+            <li>If you're driving and you feel vibration whenever you brake, you most likely have a warped disc rotor and need that machined or replaced</li>
+            <li>Consider having a professional perform a brake fluid flush every 2 years or as recommended in your vehicle's manual for optimal brake performance.</li>
+          </ol>
+          <p>Please note that the exact location can vary depending on the make and model of your vehicle. Refer to your vehicle's owner's manual for specific instructions on accessing and replacing these filters.</p>
+        </div>
+      ),
+      icon: brakes
+    },
+
+    {
+      id: 5,
+      title: "Engine Air Filter",
+      description: "Regularly replacing the Engine Air Filter is essential for a healthy engine.",
+      detailedDescription: (
+        <div>
+          <ol>
+            <li>Check and replace the engine air filter according to your vehicle's recommended maintenance schedule. A clean air filter ensures optimal engine performance and fuel efficiency.</li>
+            <li>The engine air filter is usually located in a rectangular or cylindrical air filter box under the hood of your car.</li>
+            <li>In most vehicles, it's easily accessible by unclipping or unscrewing the air filter box cover.</li>
+          </ol>
+          <p>Please note that the exact location can vary depending on the make and model of your vehicle. Refer to your vehicle's owner's manual for specific instructions on accessing and replacing these filters.</p>
+        </div>
+      ),
+      icon: airFilter
+    },
+
+    {
+      id: 6,
+      title: "Cabin Air Filter",
+      description: "Regularly replacing the Cabin Air Filter is essential for a healthy and comfortable cabin environment.",
+      detailedDescription: (
+        <div>
+          <ol>
+            <li>The cabin air filter is usually located behind the glove department or under the dashboard on the passenger side of the vehicle.</li>
+            <li>Note : Nissans usually have their cabin air filters under the dashboard on the passenger's side and sometimes under the driver's side</li>
+            <li>Some vehicles may have the cabin air filter in the engine bay, near the windshield wipers.</li>
+            <li>Access to the cabin air filter may require removing the glove compartment or a cover panel.</li>
+          </ol>
+        </div>
+      ),
+      icon: cabinFilter
+    },
+
+  ];
+
+  const handleMaintenanceClick = (maintenanceId) => {
+    setSelectedMaintenance(maintenanceId);
+  };
+
+  const closeMaintenanceModal = () => {
+    setSelectedMaintenance(null);
+  };
+
+  const properties = {
+    dark: {
+      r: 9,
+      transform: "rotate(40deg)",
+      cx: 12,
+      cy: 4,
+      opacity: 0,
+    },
+    light: {
+      r: 5,
+      transform: "rotate(90deg)",
+      cx: 30,
+      cy: 0,
+      opacity: 1,
+    },
+    springConfig: { mass: 4, tension: 250, friction: 35 },
+  };
+
+  const { r, transform, cx, cy, opacity } =
+    properties[darkMode ? "dark" : "light"];
+
+  const svgContainerProps = useSpring({
+    transform,
+    config: properties.springConfig,
+  });
+  const centerCircleProps = useSpring({
+    r,
+    config: properties.springConfig,
+  });
+  const maskedCircleProps = useSpring({
+    cx,
+    cy,
+    config: properties.springConfig,
+  });
+  const linesProps = useSpring({
+    opacity,
+    config: properties.springConfig,
+  });
+
+  const toggleDarkMode = () => {
+    setDarkMode((previous) => !previous);
+  };
+
   return (
-    <section className="maintenance">
+    <section className={`maintenance ${darkMode ? "dark-mode" : ""}`}>
       <div className="maintenance__header">
         <SecondHeaderComponent />
       </div>
+      <animated.svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        stroke="currentColor"
+        onClick={toggleDarkMode}
+        style={{
+          cursor: "pointer",
+          ...svgContainerProps,
+        }}
+      >
+        <mask id="myMask2">
+          <rect x="0" y="0" width="100%" height="100%" fill="white" />
+          {/* <animated.circle style={maskedCircleProps} r="9" fill="black" /> */}
+        </mask>
+        <animated.circle
+          cx="12"
+          cy="12"
+          style={centerCircleProps}
+          fill="black"
+          mask="url(#myMask2)"
+        />
+        <animated.g stroke="currentColor" style={linesProps}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <circle fill="black" cx="12" cy="12" r="5" />
+            <g stroke="currentColor">
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </g>
+          </svg>
+        </animated.g>
+      </animated.svg>
+      <h1>Maintenance</h1>
       <div className="maintenance__content">
-        <div className="maintenance__header">
-          <h1>Maintenance</h1>
-        </div>
-        <ul className="maintenance__information">
-        <div className='maintenance__title'>Oil Change</div>
-        <li>
-  <ModalComponent
-    imageSrc={oilChangeImage}
-    title="Oil Change"
-    content={
-      <>
-        <h3>Step-by-Step Guide: How to Change the Oil in Your Car</h3>
-        <ol>
-          <li>Park your car on a level surface and engage the parking brake.</li>
-          <li>Gather the necessary tools: oil filter wrench, socket wrench, oil drain pan, new oil filter, and new oil.</li>
-          <li>Locate the oil drain plug under your car's engine.</li>
-          <li>Position the oil drain pan under the oil drain plug.</li>
-          <li>Using a socket wrench, carefully loosen the oil drain plug and allow the old oil to drain into the pan.</li>
-          <li>While the oil is draining, locate the oil filter. Use the oil filter wrench to remove the old oil filter.</li>
-          <li>Before installing the new oil filter, apply a thin layer of new oil to the rubber gasket on the top.</li>
-          <li>Install the new oil filter by hand, turning it until snug. Do not overtighten.</li>
-          <li>Once the old oil has completely drained, replace the oil drain plug and tighten it with the socket wrench.</li>
-          <li>Under the hood, locate the oil filler cap and remove it.</li>
-          <li>Using a funnel, pour the recommended amount of new oil into the engine.</li>
-          <li>Replace the oil filler cap.</li>
-          <li>Start the engine and let it run for a few minutes to circulate the new oil.</li>
-          <li>Turn off the engine and check the oil level using the dipstick. Add more oil if needed.</li>
-          <li>Dispose of the old oil properly at a recycling center.</li>
-        </ol>
-        <p>
-          Note: It's recommended to consult your car's owner manual for the specific oil type, oil filter, and oil capacity
-          for your vehicle. If you're unsure about any step, consider seeking guidance from a professional mechanic.
-        </p>
-      </>
-    }
-  />
-</li>
-
-<li>
-<div className='maintenance__title'>Tire Change</div>
-  <ModalComponent
-    imageSrc={tiresImage}
-    title="Tire Change"
-    content={
-      <>
-        <h3>Step-by-Step Guide: How to Change a Flat Tire</h3>
-        <ol>
-          <li>Park your car on a flat, stable surface and engage the parking brake.</li>
-          <li>Locate the spare tire, jack, and lug wrench in your car's trunk.</li>
-          <li>Loosen the lug nuts on the flat tire slightly using the lug wrench. Do not remove them completely.</li>
-          <li>Position the jack under the car's frame near the flat tire. Consult your owner's manual for the correct lifting points.</li>
-          <li>Raise the car off the ground by using the jack. Ensure the car is stable and secure before continuing.</li>
-          <li>Completely remove the lug nuts and pull the flat tire off the wheel hub.</li>
-          <li>Align the holes on the spare tire with the wheel bolts and push the spare tire onto the wheel hub.</li>
-          <li>Hand-tighten the lug nuts onto the wheel bolts.</li>
-          <li>Lower the car back to the ground using the jack.</li>
-          <li>Use the lug wrench to tighten the lug nuts in a crisscross pattern. Make sure they are securely fastened.</li>
-          <li>Store the flat tire, jack, and lug wrench back in your car's trunk.</li>
-        </ol>
-        <p>
-          Note: Once you've changed the tire, it's important to have the flat tire repaired or replaced as soon as possible.
-          Follow your car's owner manual for specific instructions and consult a professional if you encounter any difficulties.
-        </p>
-      </>
-    }
-  />
-</li>
-
-<li>
-<div className='maintenance__title'>Brake Pads Change</div>
-  <ModalComponent
-    imageSrc={brakePadsImage}
-    title="Brake Pads Replacement"
-    content={
-      <>
-        <h3>Step-by-Step Guide: How to Replace Brake Pads</h3>
-        <ol>
-          <li>Lift the car using a jack and secure it with jack stands.</li>
-          <li>Remove the wheel to access the brake components.</li>
-          <li>Locate the brake caliper. Remove the bolts holding the caliper in place and carefully lift it off the brake rotor.</li>
-          <li>Slide out the old brake pads from the caliper bracket.</li>
-          <li>Use a brake pad spreader tool or a C-clamp to compress the brake caliper piston back into its housing.</li>
-          <li>Insert the new brake pads into the caliper bracket.</li>
-          <li>Apply anti-squeal brake lubricant to the back of the brake pads.</li>
-          <li>Reattach the brake caliper over the new brake pads and secure it with the bolts.</li>
-          <li>Replace the wheel and tighten the lug nuts.</li>
-          <li>Repeat the process for the other set of brake pads on the same axle.</li>
-          <li>Lower the car and test the brakes in a safe area before driving.</li>
-        </ol>
-        <p>
-          Note: Brake systems can be complex and crucial for safety. If you're not confident in your ability to replace brake pads, it's recommended to have this done by a professional mechanic.
-        </p>
-      </>
-    }
-  />
-</li>
-
-        </ul>
+        {maintenanceData.map((maintenance) => (
+          <div
+            key={maintenance.id}
+            className="maintenance__icon"
+            onClick={() => handleMaintenanceClick(maintenance.id)}
+          >
+            <img src={maintenance.icon} alt={maintenance.title} />
+          </div>
+        ))}
       </div>
+      <div className="maintenance__dark-mode-toggle"></div>
+      {selectedMaintenance !== null && (
+        <div className="maintenance-modal">
+          <div className="maintenance__modal--content">
+            <div className="modal-header">
+              <h2 className="modal-title">
+                {maintenanceData[selectedMaintenance - 1].title}
+              </h2>
+            </div>
+            <div className="modal-body">
+            <div className="icon-container">
+                <img
+                  src={maintenanceData[selectedMaintenance - 1].icon}
+                  alt={maintenanceData[selectedMaintenance - 1].title}
+                />
+              </div>
+              <div className="description-container">
+                <p className="modal-description">
+                  {maintenanceData[selectedMaintenance - 1].description}
+                </p>
+                <p className="modal-detailedDescription">
+                  {maintenanceData[selectedMaintenance - 1].detailedDescription}
+                </p>
+              </div>
+            </div>
+            <div className="modal-footer">
+              <img src={close} alt="Close" className="close-button" onClick={closeMaintenanceModal}></img>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

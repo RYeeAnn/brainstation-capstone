@@ -11,6 +11,7 @@
 
     &__header {
       text-align: center;
+      margin-bottom: 20px;
     }
 
     &__selectandbutton {
@@ -21,7 +22,6 @@
   
     &__question {
       text-align: center;
-      margin: 2rem 0;
   
       select {
         font-family:'Courier New', Courier, monospace;

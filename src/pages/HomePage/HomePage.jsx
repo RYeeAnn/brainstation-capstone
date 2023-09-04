@@ -59,11 +59,11 @@ function HomePage() {
         </div>
         <div className="homePage__card">
           <div className="homePage__imgContainer">
-            <Link to='/FAQPage'><img src={gtr} alt="Wipe" className="homePage__img" /></Link>
+            <Link to='/PhotoGalleryPage'><img src={gtr} alt="Wipe" className="homePage__img" /></Link>
           </div>
           <div className="homePage__cardText">
-            <h3>FAQ</h3>
-            <p>Find answers to frequently asked questions about car-related topics.</p>
+          <h3>Photo Gallery</h3>
+          <p>Explore a collection of stunning car photos.</p>
           </div>
         </div>
       </section>

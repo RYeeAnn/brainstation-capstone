@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./HeaderComponent.scss";
 import { Link } from "react-router-dom";
 import { bubble as Menu } from "react-burger-menu";

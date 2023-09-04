@@ -8,6 +8,7 @@ import brakePadsImage from '../../assets/brakechange.png';
 import ModalComponent from '../../components/ModalComponent/ModalComponent';
 
 function MaintenancePage() {
+  
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -19,10 +20,11 @@ function MaintenancePage() {
         <SecondHeaderComponent />
       </div>
       <div className="maintenance__content">
-        <div className="maintenance__title">
+        <div className="maintenance__header">
           <h1>Maintenance</h1>
         </div>
         <ul className="maintenance__information">
+        <div className='maintenance__title'>Oil Change</div>
         <li>
   <ModalComponent
     imageSrc={oilChangeImage}
@@ -57,6 +59,7 @@ function MaintenancePage() {
 </li>
 
 <li>
+<div className='maintenance__title'>Tire Change</div>
   <ModalComponent
     imageSrc={tiresImage}
     title="Tire Change"
@@ -86,6 +89,7 @@ function MaintenancePage() {
 </li>
 
 <li>
+<div className='maintenance__title'>Brake Pads Change</div>
   <ModalComponent
     imageSrc={brakePadsImage}
     title="Brake Pads Replacement"

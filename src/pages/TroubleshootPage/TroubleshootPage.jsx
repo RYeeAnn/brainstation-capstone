@@ -65,13 +65,13 @@ function TroubleshootPage() {
     };
 
     const toastMessage = () => {
-      toast.success("Comment submitted!", {
+      toast.success("Comment submitted.", {
         position: toast.POSITION.TOP_RIGHT,
       });
     };
 
     if (!userName || !userComment) {
-      toast.error("Please fill in both your name and comment!", {
+      toast.error("Please fill in both your name and comment.", {
         position: toast.POSITION.TOP_RIGHT,
       });
       return;
@@ -123,7 +123,7 @@ function TroubleshootPage() {
         setUserComments((prevComments) =>
           prevComments.filter((comment) => comment.id !== commentId)
         );
-        toast.success("Comment deleted!", {
+        toast.success("Comment deleted.", {
           position: toast.POSITION.TOP_RIGHT,
         });
       })
@@ -294,7 +294,7 @@ function TroubleshootPage() {
           cols="30"
           rows="10"
         ></textarea>
-        <button className="troubleshoot__submit">Enter!</button>
+        <button className="troubleshoot__submit">Enter</button>
       </form>
       <div className="troubleshoot__responses">
         {userComments.map((comment, index) => (

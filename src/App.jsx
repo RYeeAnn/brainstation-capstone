@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage/HomePage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import MaintenancePage from './pages/MaintenancePage/MaintenancePage';
 import WarningLightsPage from './pages/WarningLightsPage/WarningLightsPage';
-import FAQPage from './pages/FAQPage/FAQPage';
+import PhotoGalleryPage from './pages/PhotoGalleryPage/PhotoGalleryPage';
 import TroubleshootPage from './pages/TroubleshootPage/TroubleshootPage';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route path='/AboutPage' element={< AboutPage />} />
         <Route path='/MaintenancePage' element={< MaintenancePage />} />
         <Route path='/WarningLightsPage' element={< WarningLightsPage />} />
-        <Route path='/FAQPage' element={<FAQPage />} />
+        <Route path='/PhotoGalleryPage' element={<PhotoGalleryPage />} />
         <Route path='/TroubleshootPage' element={<TroubleshootPage />} />
       </Routes>
       </BrowserRouter>

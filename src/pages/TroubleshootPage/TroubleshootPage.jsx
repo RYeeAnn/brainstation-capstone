@@ -323,7 +323,7 @@ function TroubleshootPage() {
         </div>
       )}
       <div className="troubleshoot__commentsTitle">
-        Leave feedback below! <img className="troubleshoot__commentsTitle--img" src={feedback} alt="Feedback" />
+        Leave a feedback below! <img className="troubleshoot__commentsTitle--img" src={feedback} alt="Feedback" />
       </div>
       <form
         onSubmit={handleCommentSubmit}

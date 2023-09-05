@@ -3,23 +3,19 @@ import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import SecondHeaderComponent from '../../components/SecondHeaderComponent/SecondHeaderComponent';
 import './PhotoGalleryPage.scss';
+import FooterComponent from '../../components/FooterComponent/FooterComponent';
 
 function PhotoGalleryPage() {
   const [zoomedPhoto, setZoomedPhoto] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
 
   const images = [
-    require('../../assets/garage.jpeg'),
     require('../../assets/ryansubie.png'),
     require('../../assets/subaru.jpeg'),
     require('../../assets/subies.png'),
     require('../../assets/rims.jpeg'),
-    require('../../assets/cars.png'),
-    require('../../assets/subie1.jpg'),
     require('../../assets/subie2.jpg'),
-    require('../../assets/subie3.jpg'),
     require('../../assets/subie4.jpg'),
-    require('../../assets/subie5.jpg'),
     require('../../assets/subie6.jpg'),
     require('../../assets/subie7.jpg'),
     require('../../assets/subie8.jpg'),
@@ -33,14 +29,10 @@ function PhotoGalleryPage() {
     require('../../assets/subie16.jpg'),
     require('../../assets/subie17.jpg'),
     require('../../assets/subie18.jpg'),
-    require('../../assets/subie19.jpg'),
     require('../../assets/subie20.jpg'),
-    require('../../assets/subie21.jpg'),
     require('../../assets/subie22.jpg'),
     require('../../assets/subie23.jpg'),
     require('../../assets/subie24.jpg'),
-    require('../../assets/subie25.jpg'),
-    require('../../assets/subie26.jpg'),
     require('../../assets/subie27.jpg'),
   ];
 
@@ -179,6 +171,7 @@ function PhotoGalleryPage() {
           </div>
         </div>
       )}
+      <FooterComponent />
     </section>
   );
 }

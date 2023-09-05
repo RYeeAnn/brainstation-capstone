@@ -9,6 +9,7 @@ import brakes from "../../assets/brake-disc.png";
 import airFilter from "../../assets/air-filter.png"
 import cabinFilter from "../../assets/cabin-filter.png"
 import close from "../../assets/close-sign.png";
+import FooterComponent from "../../components/FooterComponent/FooterComponent";
 
 function MaintenancePage() {
   const [selectedMaintenance, setSelectedMaintenance] = useState(null);
@@ -26,7 +27,7 @@ function MaintenancePage() {
       detailedDescription: (
         <div>
           <ul>
-            <li>Typically, it's every 7,000 to 10,000 kilometers or every 6 months.</li>
+            <li>Typically, you should change your oil every 7,000 to 10,000 kilometers or every 6 months.</li>
             <li>Select the appropriate type and viscosity of motor oil based on your vehicle's specifications and the climate in your region.</li>
             <li>0w-20, 5w-20, 5w-30 are the most common oil viscosities from thinnest to thickest.</li>
           </ul>
@@ -78,7 +79,6 @@ function MaintenancePage() {
             <li>If you're driving and you feel vibration whenever you brake, you most likely have a warped disc rotor and need that machined or replaced</li>
             <li>Consider having a professional perform a brake fluid flush every 2 years or as recommended in your vehicle's manual for optimal brake performance.</li>
           </ol>
-          <p>Please note that the exact location can vary depending on the make and model of your vehicle. Refer to your vehicle's owner's manual for specific instructions on accessing and replacing these filters.</p>
         </div>
       ),
       icon: brakes
@@ -113,6 +113,7 @@ function MaintenancePage() {
             <li>Some vehicles may have the cabin air filter in the engine bay, near the windshield wipers.</li>
             <li>Access to the cabin air filter may require removing the glove compartment or a cover panel.</li>
           </ol>
+          <p>Please note that the exact location can vary depending on the make and model of your vehicle. Refer to your vehicle's owner's manual for specific instructions on accessing and replacing these filters.</p>
         </div>
       ),
       icon: cabinFilter
@@ -272,6 +273,7 @@ function MaintenancePage() {
           </div>
         </div>
       )}
+      <FooterComponent />
     </section>
   );
 }

@@ -5,8 +5,10 @@ import { useSpring, animated } from "react-spring";
 import axios from "axios";
 import SecondHeaderComponent from "../../components/SecondHeaderComponent/SecondHeaderComponent";
 import "./TroubleshootPage.scss";
-import trash from "../../assets/trash.svg"
-import heart from "../../assets/heart.svg"
+import trash from "../../assets/trash.svg";
+import heart from "../../assets/heart.svg";
+import feedback from "../../assets/feedback.png"
+import FooterComponent from "../../components/FooterComponent/FooterComponent";
 
 const PORT = process.env.REACT_APP_API_SERVER;
 
@@ -18,6 +20,12 @@ function TroubleshootPage() {
   const [userComments, setUserComments] = useState([]);
   const [userName, setUserName] = useState("");
   const [darkMode, setDarkMode] = useState(false);
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+  const [commentToDelete, setCommentToDelete] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
 
   useEffect(() => {
     axios
@@ -113,15 +121,20 @@ function TroubleshootPage() {
         // Handle error as needed
       });
   };
-  
-  
 
   const handleDeleteComment = (commentId) => {
+    setShowDeleteConfirmation(true);
+    setCommentToDelete(commentId);
+  };
+
+  const handleConfirmDelete = () => {
+    // Delete the comment using the commentId stored in state
+    const commentIdToDelete = commentToDelete;
     axios
-      .delete(`${PORT}/troubleshootPage/comments/${commentId}`)
+      .delete(`${PORT}/troubleshootPage/comments/${commentIdToDelete}`)
       .then(() => {
         setUserComments((prevComments) =>
-          prevComments.filter((comment) => comment.id !== commentId)
+          prevComments.filter((comment) => comment.id !== commentIdToDelete)
         );
         toast.success("Comment deleted.", {
           position: toast.POSITION.TOP_RIGHT,
@@ -133,6 +146,16 @@ function TroubleshootPage() {
           position: toast.POSITION.TOP_RIGHT,
         });
       });
+
+    // Reset the state
+    setShowDeleteConfirmation(false);
+    setCommentToDelete(null);
+  };
+
+  const handleCancelDelete = () => {
+    // Reset the state
+    setShowDeleteConfirmation(false);
+    setCommentToDelete(null);
   };
 
   const properties = {
@@ -185,7 +208,7 @@ function TroubleshootPage() {
         <ToastContainer />
       </div>
       <div className="troubleshoot__question">
-      <animated.svg
+        <animated.svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -239,15 +262,38 @@ function TroubleshootPage() {
           </animated.g>
         </animated.svg>
         <h2 className="troubleshoot__title">Let's try to find a solution!</h2>
-        <div className="troubleshoot__selectandbutton">
-          <select className="troubleshoot__selectandbutton--text" value={selectedIssue} onChange={handleIssueChange}>
-            <option value="">Select an issue</option>
-            {issues.map((issue) => (
-              <option key={issue.id}>{issue.problem}</option>
-            ))}
-          </select>
-          <button onClick={handleSubmit}>Submit</button>
+<div className="troubleshoot__selectandbutton">
+  <select
+    className="troubleshoot__selectandbutton--text"
+    value={selectedIssue}
+    onChange={handleIssueChange}
+  >
+    <option value="">Select an issue</option>
+    {issues.map((issue) => (
+      <option key={issue.id}>{issue.problem}</option>
+    ))}
+  </select>
+  <button onClick={handleSubmit}>Submit</button>
+</div>
+<div className="troubleshoot__response--placeholder">
+  {selectedIssue ? (
+    response.length > 0 ? (
+      response.map((solution, index) => (
+        <div className="troubleshoot__solutions--placeholder" key={index}>
+          {/* ... Your response content */}
         </div>
+      ))
+    ) : (
+      <div className="troubleshoot__placeholder-response">
+        <p>Please click submit.</p>
+      </div>
+    )
+  ) : (
+    <div className="troubleshoot__placeholder--response">
+      <p>Select an issue to see the response.</p>
+    </div>
+  )}
+</div>
       </div>
       {response.length > 0 && (
         <div className="troubleshoot__response">
@@ -261,7 +307,10 @@ function TroubleshootPage() {
                 Instructions:
               </p>
               {/* Dangerously syntax to my instructions into ordered list*/}
-              <div className="troubleshoot__solutions--instructions--list" dangerouslySetInnerHTML={{__html: solution.instructions}} />
+              <div
+                className="troubleshoot__solutions--instructions--list"
+                dangerouslySetInnerHTML={{ __html: solution.instructions }}
+              />
               {/* {solution.instructions
                 .split("\n\n")
                 .map((paragraph, paragraphIndex) => (
@@ -273,9 +322,14 @@ function TroubleshootPage() {
           ))}
         </div>
       )}
+      <div className="troubleshoot__commentsTitle">
+        Leave feedback below! <img className="troubleshoot__commentsTitle--img" src={feedback} alt="Feedback" />
+      </div>
       <form
         onSubmit={handleCommentSubmit}
-        className={`troubleshoot__comments ${darkMode ? "dark-mode" : ""}`}
+        className={`troubleshoot__comments ${
+          darkMode ? "dark-mode" : ""
+        }`}
       >
         <input
           className={`troubleshoot__name ${darkMode ? "dark-mode" : ""}`}
@@ -285,7 +339,9 @@ function TroubleshootPage() {
           onChange={(event) => setUserName(event.target.value)}
         />
         <textarea
-          className={`troubleshoot__comment ${darkMode ? "dark-mode" : ""}`}
+          className={`troubleshoot__comment ${
+            darkMode ? "dark-mode" : ""
+          }`}
           placeholder="Enter comment..."
           name=""
           value={userComment}
@@ -305,19 +361,48 @@ function TroubleshootPage() {
             }`}
           >
             <div className="troubleshoot__userComment--namedate">
-            <p className="troubleshoot__userComment--name">{comment.name}</p>
-            <p className="troubleshoot__userComment--date">{new Date(comment.created_at).toLocaleString()}</p>
+              <p className="troubleshoot__userComment--name">{comment.name}</p>
+              <p className="troubleshoot__userComment--date">
+                {new Date(comment.created_at).toLocaleString()}
+              </p>
             </div>
             <div className="troubleshoot__userComment--commentContainer">
-            <p className="troubleshoot__userComment--comment">{comment.comment}</p>
+              <p className="troubleshoot__userComment--comment">
+                {comment.comment}
+              </p>
             </div>
             <div className="troubleshoot__userComment--likedelete">
-            <div className="troubleshoot__userComment--like" onClick={() => handleLikeComment(comment.id)}><img className="troubleshoot__userComment--like" src={heart} alt="Heart" />{comment.likes}</div>
-            <img className="troubleshoot__userComment--icon" onClick={() => handleDeleteComment(comment.id)} src={trash} alt="trash" />
+              <div
+                className="troubleshoot__userComment--like"
+                onClick={() => handleLikeComment(comment.id)}
+              >
+                <img
+                  className="troubleshoot__userComment--like"
+                  src={heart}
+                  alt="Heart"
+                />
+                {comment.likes}
+              </div>
+              <img
+                className="troubleshoot__userComment--icon"
+                onClick={() => handleDeleteComment(comment.id)}
+                src={trash}
+                alt="trash"
+              />
             </div>
           </div>
         ))}
       </div>
+      {showDeleteConfirmation && (
+        <div className={`delete-confirmation ${darkMode ? "dark-mode" : ""}`}>
+          <p className="delete-confirmation__text">Are you sure you want to delete this comment?</p>
+          <div className="delete-confirmation__buttons">
+          <button onClick={handleConfirmDelete}>Yes</button>
+          <button onClick={handleCancelDelete}>No</button>
+          </div>
+        </div>
+      )}
+      <FooterComponent />
     </section>
   );
 }

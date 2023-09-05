@@ -18,7 +18,27 @@
         display: flex;
         justify-content: center;
         gap: 10px;
-        padding-bottom: 16px;
+        padding-bottom: 4rem;
+    }
+
+    @keyframes flash {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    &__placeholder--response p {
+      animation: flash 2s infinite;
+    }
+
+    &__placeholder--response p {
+      padding-bottom: 16rem;
     }
   
     &__question {
@@ -29,7 +49,6 @@
         background-color: black;
         color: #fff;
         border: none;
-        padding: 0.5rem;
         font-size: 12px;
         border-radius: 5px;
         outline: none;
@@ -67,7 +86,11 @@
     &__solutions {
         border-bottom: 2px solid yellow;
         padding-bottom: 16px;
-        font-size: 10px;
+        font-size: 12px;
+
+        @include tablet {
+          font-size: 16px;
+        }
 
         &--title {
             text-align: center;
@@ -96,7 +119,19 @@
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      margin-top: 20px;
+    }
+
+    &__commentsTitle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 5rem;
+      padding-bottom: 1rem;
+      gap: 2rem;
+
+      &--img {
+        width: 10%;
+      }
     }
 
     &__name {
@@ -185,6 +220,7 @@
 
     &__responses {
       text-align: center;
+      padding-bottom: 1rem;
     }
 
     &.dark-mode {
@@ -241,4 +277,46 @@
       width: 20%;
     }
   }
+
+  /* Add this CSS to your stylesheet or a separate CSS file */
+.delete-confirmation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  text-align: center;
+}
+
+.delete-confirmation p {
+  margin: 0 0 20px;
+  color: black;
+}
+
+.delete-confirmation button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  background-color: #ff5555;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.delete-confirmation button:hover {
+  background-color: #ff3333;
+}
+
+.delete-confirmation__buttons {
+  display: flex;
+}
+
+.Toastify__toast {
+  background: linear-gradient(to right, #001f3f, #0099ff);
+  color: white;
+}
   

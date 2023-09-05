@@ -18,11 +18,10 @@ function HomePage() {
         <div className="homePage__hero">
           <div className="homePage__heroText">
             <h1 className="homePage__title">
-              Cruisin
+              Cruisin'
             </h1>
             <p>Ever faced a frustrating issue and wondered how to fix it? Welcome
-            to Cruisin, where we have answers to your questions and solutions
-            to your problems.
+            to Cruisin, where you can find the answers to your questions.
             </p>
           </div>
         </div>

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import SecondHeaderComponent from '../../components/SecondHeaderComponent/SecondHeaderComponent';
 import './AboutPage.scss';
 import profileImage from '../../assets/ryan.png'; 
+import FooterComponent from '../../components/FooterComponent/FooterComponent';
 
 function AboutPage() {
     const [darkMode, setDarkMode] = useState(false);
@@ -124,6 +125,7 @@ function AboutPage() {
                     </p>
                 </div>
             </div>
+            <FooterComponent />
         </section>
     );
 }

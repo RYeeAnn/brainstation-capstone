@@ -19,6 +19,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    margin-bottom: 2rem;
   }
 
   .warningLights__icon {
@@ -59,7 +60,7 @@
     }
 
     .warningLights__modal--content {
-      background-color: black;
+      background: linear-gradient(45deg, #0c014b, #100f14, #390101);
       color: #ffffff;
       padding: 20px;
       border-radius: 10px;

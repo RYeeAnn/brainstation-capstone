@@ -26,11 +26,10 @@ function HeaderComponent() {
             <main id="page-wrap">
               <div className="menu">
                 <div className="menu__title">
-                  Cruisin
+                  Cruisin'
                 </div>
               <Link to="/" id="home" className="menu__item" href="/"><img src={home} alt="Home" />Home</Link>
               <Link to="/aboutpage" id="about" className="menu__item"><img src={user} alt="User"/>About</Link>
-              <Link to="contactpage" id="contact" className="menu__item" href="/contact"><img src={at} alt="At" />Contact</Link>
               <Link to="warningLightsPage" className="menu__secondItem menu__secondItem1"><img src={alertTriangle} alt="Alert" />Warning Lights</Link>
               <Link to="maintenancePage" className="menu__secondItem"><img src={messageCircle} alt="Message Circle" />Maintenance</Link>
               <Link to="troubleshootPage" className="menu__secondItem"><img src={tool} alt="Tool" />Troubleshoot</Link>

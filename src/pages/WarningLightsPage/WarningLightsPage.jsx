@@ -21,6 +21,7 @@ import tractionControlMalfunctionIcon from "../../assets/traction-control-malfun
 import transmissionTempIcon from "../../assets/transmission-temperature.png";
 import washerFluidIcon from "../../assets/washer-fluid.png";
 import close from "../../assets/close-sign.png";
+import FooterComponent from "../../components/FooterComponent/FooterComponent";
 
 function WarningLightsPage() {
   const [selectedWarning, setSelectedWarning] = useState(null);
@@ -329,6 +330,7 @@ function WarningLightsPage() {
           </div>
         </div>
       )}
+      <FooterComponent />
     </section>
   );
 }

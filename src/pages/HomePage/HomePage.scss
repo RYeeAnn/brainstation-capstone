@@ -4,9 +4,9 @@
 .homePage {
   position: relative;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../assets/japanroads.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../assets/subie6.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
@@ -22,7 +22,6 @@
     height: 600px;
     justify-content: center;
     align-items: center;
-    text-align: center;
     animation: fadeIn 1s ease-in-out both;
 
     @include desktop {

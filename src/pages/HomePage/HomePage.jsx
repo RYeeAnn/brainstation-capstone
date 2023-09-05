@@ -25,7 +25,6 @@ function HomePage() {
             to your problems.
             </p>
           </div>
-          <div className="homePage__heroSubtext">Start Exploring</div>
         </div>
       </section>
 

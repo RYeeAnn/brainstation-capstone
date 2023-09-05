@@ -17,7 +17,6 @@
 
   &__hero {
     display: flex;
-    flex-direction: column;
     position: relative;
     height: 600px;
     justify-content: center;
@@ -31,7 +30,6 @@
 
   &__heroText {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.2rem;
     color: #ffffff;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
     opacity: 0;

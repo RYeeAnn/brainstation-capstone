@@ -27,8 +27,12 @@
     transition: transform 0.2s;
 
     img {
-      width: 50%;
+      width: 100px;
       border-radius: 40px;
+
+      @include tablet {
+        width: 50%;
+      }
     }
   }
 

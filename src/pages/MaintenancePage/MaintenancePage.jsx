@@ -230,7 +230,8 @@ function MaintenancePage() {
           </svg>
         </animated.g>
       </animated.svg>
-      <h1>Maintenance</h1>
+      <h1 className="maintenance__title">Maintenance</h1>
+      <p className="maintenance__description">Essential maintenance tips to help you understand when and how to keep your vehicle in optimal condition and ensure its longevity!</p>
       <div className="maintenance__content">
         {maintenanceData.map((maintenance) => (
           <div

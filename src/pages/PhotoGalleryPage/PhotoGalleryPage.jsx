@@ -28,7 +28,7 @@
       require('../../assets/subie15.jpg'),
       require('../../assets/subie16.jpg'),
       require('../../assets/subie17.jpg'),
-      require('../../assets/subie18.jpg'),
+      require('../../assets/subie18copy.jpg'),
       require('../../assets/subie20.jpg'),
       require('../../assets/subie22.jpg'),
       require('../../assets/subie23.jpg'),

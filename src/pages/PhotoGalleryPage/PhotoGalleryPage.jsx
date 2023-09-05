@@ -1,5 +1,5 @@
 // PhotoGalleryPage.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import SecondHeaderComponent from '../../components/SecondHeaderComponent/SecondHeaderComponent';
 import './PhotoGalleryPage.scss';
@@ -35,6 +35,10 @@ function PhotoGalleryPage() {
     require('../../assets/subie24.jpg'),
     require('../../assets/subie27.jpg'),
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
 
   const openZoom = (index) => {
     setZoomedPhoto(index);

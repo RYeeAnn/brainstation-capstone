@@ -284,7 +284,7 @@ function TroubleshootPage() {
         </div>
       ))
     ) : (
-      <div className="troubleshoot__placeholder-response">
+      <div className="troubleshoot__placeholder--response">
         <p>Please click submit.</p>
       </div>
     )

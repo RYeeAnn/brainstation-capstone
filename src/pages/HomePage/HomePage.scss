@@ -4,7 +4,7 @@
 .homePage {
   position: relative;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../assets/subie6.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../../assets/subie18.jpg);
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -18,9 +18,9 @@
   &__hero {
     display: flex;
     position: relative;
-    height: 600px;
+    padding-top: 12rem;
+    height: 1000px;
     justify-content: center;
-    align-items: center;
     animation: fadeIn 1s ease-in-out both;
 
     @include desktop {

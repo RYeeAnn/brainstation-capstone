@@ -60,8 +60,8 @@ function HomePage() {
             <Link to='/PhotoGalleryPage'><img src={gtr} alt="Wipe" className="homePage__img" /></Link>
           </div>
           <div className="homePage__cardText">
-          <h3>Photo Gallery</h3>
-          <p>Explore a collection of stunning car photos.</p>
+          <h3>Tools</h3>
+          <p>Explore a collection of tools.</p>
           </div>
         </div>
       </section>

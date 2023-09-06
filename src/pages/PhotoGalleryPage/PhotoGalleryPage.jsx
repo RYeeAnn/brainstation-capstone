@@ -165,7 +165,7 @@ function PhotoGalleryPage() {
           </svg>
         </animated.g>
       </animated.svg>
-      <h1>Photo Gallery</h1>
+      <h1>Tools</h1>
       <div className="photo-gallery__content">
         <div className="photo-gallery__description"> Discover a wide array of essential tools. Browse and identify tools, view detailed images, and expand your knowledge of handy equipment.</div>
         <div className="photo-gallery__grid">

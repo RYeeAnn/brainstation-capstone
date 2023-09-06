@@ -232,7 +232,7 @@ function WarningLightsPage() {
   return (
     <section className={`warningLights ${darkMode ? "dark-mode" : ""}`}>
       <div className="WarningLights__header">
-        <SecondHeaderComponent headerClass={"red-header"}/>
+        <SecondHeaderComponent headerClass={"red-header"} />
       </div>
       <animated.svg
         xmlns="http://www.w3.org/2000/svg"
@@ -312,7 +312,7 @@ function WarningLightsPage() {
               </h2>
             </div>
             <div className="modal-body">
-              <div className="icon-container">
+              <div className="icon-warningContainer">
                 <img
                   src={warningLightsData[selectedWarning - 1].icon}
                   alt={warningLightsData[selectedWarning - 1].title}

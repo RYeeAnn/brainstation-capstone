@@ -127,11 +127,13 @@ function MaintenancePage() {
     },    {
       id: 7,
       title: "Battery",
-      description: "",
+      description: "Regularly inspecting your car's battery can help prevent unexpected breakdowns and ensure reliable starting power.",
       detailedDescription: (
         <div>
           <ol>
-            <li></li>
+            <li>Inspect the battery terminals for corrosion and clean them if necessary.</li>
+            <li>Check the battery's fluid level (for non-maintenance-free batteries) and top it off with distilled water if needed.</li>
+            <li>Consider having the battery tested to ensure it's holding a charge effectively.</li>
           </ol>
         </div>
       ),
@@ -140,11 +142,13 @@ function MaintenancePage() {
     {
       id: 8,
       title: "Coolant",
-      description: "",
+      description: "Proper engine coolant levels are essential for maintaining your engine's temperature and preventing overheating.",
       detailedDescription: (
         <div>
           <ol>
-            <li></li>
+            <li>Regularly check the coolant level in the overflow tank when the engine is cool.</li>
+            <li>Top off the coolant with a 50/50 mix of coolant and water if it's low.</li>
+            <li>Inspect hoses and connections for coolant leaks and repair as needed.</li>
           </ol>
         </div>
       ),
@@ -153,11 +157,13 @@ function MaintenancePage() {
     {
       id: 9,
       title: "Transmission",
-      description: "",
+      description: "Maintaining your transmission is crucial for smooth and reliable shifting.",
       detailedDescription: (
         <div>
           <ol>
-            <li></li>
+            <li>Check the transmission fluid level according to your vehicle's recommended maintenance schedule.</li>
+            <li>Replace the transmission fluid and filter as recommended by the manufacturer.</li>
+          <li>Inspect for transmission fluid leaks and repair as needed.</li>
           </ol>
         </div>
       ),
@@ -166,11 +172,12 @@ function MaintenancePage() {
     {
       id: 10,
       title: "Lights",
-      description: "",
+      description: "Properly functioning lights are essential for your safety and the safety of others on the road.",
       detailedDescription: (
         <div>
           <ol>
-            <li></li>
+            <li>Regularly check all exterior and interior lights, including headlights, taillights, turn signals, brake lights, and interior bulbs.</li>
+            <li>Replace any burned-out bulbs promptly to ensure visibility and safety.</li>
           </ol>
         </div>
       ),
@@ -179,11 +186,12 @@ function MaintenancePage() {
     {
       id: 11,
       title: "Serpentine Belt",
-      description: "",
+      description: "The serpentine belt powers many of your engine's components. A damaged belt can lead to engine overheating or other issues.",
       detailedDescription: (
         <div>
           <ol>
-            <li></li>
+            <li>Inspect the serpentine belt for signs of wear, such as cracks, fraying, or glazing.</li>
+            <li>Replace the serpentine belt as recommended by the manufacturer or if you notice any damage.</li>
           </ol>
         </div>
       ),
@@ -192,11 +200,12 @@ function MaintenancePage() {
     {
       id: 12,
       title: "Tire Pressure",
-      description: "",
+      description: "Proper tire pressure is crucial for safety, fuel efficiency, and tire longevity.",
       detailedDescription: (
         <div>
           <ol>
-            <li></li>
+            <li>Regularly check and maintain the correct tire pressure as indicated in your vehicle's owner's manual or on the driver's side door jam sticker.</li>
+            <li>Proper tire pressure ensures safety, even tire wear, and optimal fuel efficiency.</li>
           </ol>
         </div>
       ),
@@ -205,11 +214,12 @@ function MaintenancePage() {
     {
       id: 13,
       title: "Windshield Wipers",
-      description: "",
+      description: "Well-maintained windshield wipers are essential for visibility during rainy or snowy conditions.",
       detailedDescription: (
         <div>
           <ol>
-            <li></li>
+            <li>Inspect windshield wiper blades for signs of wear or damage, such as streaking or skipping.</li>
+            <li>Replace windshield wiper blades as needed for clear visibility during rainy or snowy conditions.</li>
           </ol>
         </div>
       ),
@@ -218,11 +228,12 @@ function MaintenancePage() {
     {
       id: 14,
       title: "Spark Plugs",
-      description: "",
+      description: "Spark plugs play a critical role in your engine's performance and fuel efficiency.",
       detailedDescription: (
         <div>
           <ol>
-            <li></li>
+            <li>Check and replace spark plugs according to your vehicle's recommended maintenance schedule.</li>
+            <li>Worn or fouled spark plugs can lead to poor engine performance and reduced fuel efficiency.</li>
           </ol>
         </div>
       ),
@@ -285,7 +296,7 @@ function MaintenancePage() {
   return (
     <section className={`maintenance ${darkMode ? "dark-mode" : ""}`}>
       <div className="maintenance__header">
-        <SecondHeaderComponent headerClass="blue-header"/>
+        <SecondHeaderComponent headerClass="blue-header" />
       </div>
       <animated.svg
         xmlns="http://www.w3.org/2000/svg"
@@ -364,7 +375,7 @@ function MaintenancePage() {
               </h2>
             </div>
             <div className="modal-body">
-            <div className="icon-container">
+            <div className="icon-maintenanceContainer">
                 <img
                   src={maintenanceData[selectedMaintenance - 1].icon}
                   alt={maintenanceData[selectedMaintenance - 1].title}

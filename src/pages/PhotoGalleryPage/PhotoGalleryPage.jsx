@@ -9,11 +9,21 @@ import philips from "../../assets/philips.jpg";
 import breakerBar from "../../assets/breaker-bar.jpg";
 import torqueWrench from "../../assets/torque-wrench.jpg";
 import pliers from "../../assets/pliers.jpg";
-import wrench from "../../assets/wrench.jpg";
 import combinationWrench from "../../assets/combination-wrench.jpg";
+import adjustableWrench from "../../assets/adjustable-wrench.jpg"
 import toolWrench from "../../assets/tool-wrench.jpg";
 import oilFilterWrench from "../../assets/oil-filter-wrench.jpg";
 import tirePressureGauage from "../../assets/tire-pressure-gauge.jpg";
+import needleNosePlier from "../../assets/needle-nose-plier.jpg";
+import ninetyNeedleNosePlier from "../../assets/90-needle-nose-plier.jpg";
+import miniNeedleNosePlier from "../../assets/mini-needle-nose-plier.jpg";
+import lockingPlier from "../../assets/locking-plier.jpg";
+import sparkPlugWrench from "../../assets/spark-plug-wrench.jpg";
+import clipRemovalTool from "../../assets/clip-removal-tool.jpg";
+import digitalCaliper from "../../assets/digital-caliper.jpg";
+import deadBlowHammer from "../../assets/dead-blow-hammer.jpg";
+
+
 
 
 
@@ -28,9 +38,18 @@ function PhotoGalleryPage() {
     { src: torqueWrench, title: "Torque Wrench" },
     { src: pliers, title: "Pliers" },
     { src: combinationWrench, title: "Combination Wrench" },
+    { src: adjustableWrench, title: "Adjustable Wrench" },
     { src: toolWrench, title: "Ratchet" },
     { src: oilFilterWrench, title: "Oil Filter Wrench" },
     { src: tirePressureGauage, title: "Tire Pressure Gauge" },
+    { src: needleNosePlier, title: "Needle Nose Plier" },
+    { src: ninetyNeedleNosePlier, title: "90 Degree Needle Nose Plier" },
+    { src: miniNeedleNosePlier, title: "Mini Needle Nose Plier" },
+    { src: lockingPlier, title: "Locking Plier" },
+    { src: sparkPlugWrench, title: "Spark Plug Wrench" },
+    { src: clipRemovalTool, title: "Clip Removal Tool" },
+    { src: digitalCaliper, title: "Digital Caliper" },
+    { src: deadBlowHammer, title: "Dead Blow Hammer" },
   ];
 
   useEffect(() => {

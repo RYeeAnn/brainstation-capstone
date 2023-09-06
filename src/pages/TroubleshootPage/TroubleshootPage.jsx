@@ -347,8 +347,6 @@ function TroubleshootPage() {
           value={userComment}
           onChange={(event) => setUserComment(event.target.value)}
           id=""
-          cols="30"
-          rows="10"
         ></textarea>
         <button className="troubleshoot__submit">Enter</button>
       </form>

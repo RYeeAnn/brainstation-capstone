@@ -4,6 +4,7 @@
 /* WarningLightsPage.scss */
 .maintenance {
   text-align: center;
+  font-family:'Verdana', sans-serif;
 
   .maintenance__header {
     margin-bottom: 20px;
@@ -31,6 +32,10 @@
     cursor: pointer;
     transition: transform 0.2s;
     width: 45%;
+
+    &-title {
+      font-size: 12px;
+    }
 
     img {
       width: 100px;

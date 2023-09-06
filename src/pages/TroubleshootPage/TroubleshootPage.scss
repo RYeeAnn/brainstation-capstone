@@ -4,6 +4,7 @@
 .troubleshoot {
     display: flex;
     flex-direction: column;
+    font-family:'Verdana', sans-serif;
 
     &__title {
       font-size: 16px;
@@ -138,7 +139,6 @@
     &__name {
       font-family:'Verdana, sans-serif';
       font-size: 1.2rem;
-      padding-left: 0.5rem;
       margin-bottom: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
@@ -147,7 +147,6 @@
     &__comment {
       font-family:'Verdana, sans-serif';
       font-size: 1.2rem;
-      padding-left: 0.5rem;
       width: 100%;
       margin-bottom: 10px;
       border: 1px solid #ccc;
@@ -192,15 +191,15 @@
         display: flex;
         justify-content: space-between;
         color: grey;
-        font-size: 1rem;
+        font-size: 8px;
       }
 
       &--comment {
-        font-size: 1rem;
+        font-size: 12px;
         word-wrap: break-word;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-height: 6em;
+        max-height: 6rem;
         line-height: 1.5;
       }
     }

@@ -3,6 +3,7 @@
 
 /* PhotoGalleryPage.scss */
 .photo-gallery {
+  font-family:'Verdana', sans-serif;
 
   text-align: center;
   
@@ -61,6 +62,12 @@
           }
         }
       }
+
+      .photo-gallery__description {
+        padding-bottom: 2rem;
+      }
+
+
       &.dark-mode {
         background-color: #1a1a1a; /* Dark background color */
         color: #ffffff;

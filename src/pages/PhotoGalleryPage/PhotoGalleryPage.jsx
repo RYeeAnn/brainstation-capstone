@@ -167,6 +167,7 @@ function PhotoGalleryPage() {
       </animated.svg>
       <h1>Photo Gallery</h1>
       <div className="photo-gallery__content">
+        <div className="photo-gallery__description"> Discover a wide array of essential tools. Browse and identify tools, view detailed images, and expand your knowledge of handy equipment.</div>
         <div className="photo-gallery__grid">
           {images.map((image, index) => (
             <div className="photo-gallery__item" key={index}>

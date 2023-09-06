@@ -110,7 +110,7 @@ function PhotoGalleryPage() {
   return (
     <section className={`photo-gallery ${darkMode ? "dark-mode" : ""}`}>
       <div className="photo-gallery__header">
-        <SecondHeaderComponent />
+        <SecondHeaderComponent headerClass={"yellow-header"} />
       </div>
       <animated.svg
         xmlns="http://www.w3.org/2000/svg"
@@ -171,12 +171,12 @@ function PhotoGalleryPage() {
         <div className="photo-gallery__grid">
           {images.map((image, index) => (
             <div className="photo-gallery__item" key={index}>
-              <div className="photo-gallery__item-title">{image.title}</div>
               <img className="photo-gallery__item-image"
                 src={image.src}
                 alt={`Photo ${index + 1}`}
                 onClick={() => openZoom(index)}
               />
+              <div className="photo-gallery__item-title">{image.title}</div>
             </div>
           ))}
         </div>

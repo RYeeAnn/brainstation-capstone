@@ -1,6 +1,14 @@
 @use '../../partials/styles/mixins.scss' as *;
 @use '../../partials/styles/variables.scss' as *;
 
+.yellow-header {
+  background: linear-gradient(to top, #FFFFFF, #c4ab0d);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* PhotoGalleryPage.scss */
 .photo-gallery {
   font-family:'Verdana', sans-serif;
@@ -29,15 +37,16 @@
           width: 100%;
 
           img {
-            max-width: 100%;
+            width: 100%;
             height: 60px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           }
 
           &-title {
-            font-size: 10px;
+            font-size: 8px;
             border: 1px solid silver;
+            border-radius: 20px;
           }
         }
       }

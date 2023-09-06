@@ -56,7 +56,7 @@ function AboutPage() {
     return (
         <section className={`about ${darkMode ? "dark-mode" : ""}`}>
             <div className="about__header">
-                <SecondHeaderComponent />
+                <SecondHeaderComponent headerClass={"black-header"} />
             </div>
             <div className={`about__content ${darkMode ? "dark-mode" : ""}`}>
             <animated.svg

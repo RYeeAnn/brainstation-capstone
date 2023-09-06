@@ -1,6 +1,15 @@
 @use "../../partials/styles/mixins.scss" as *;
 @use "../../partials/styles/variables.scss" as *;
 
+
+.blue-header {
+  background: linear-gradient(to top, #FFFFFF, #1301b3);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* WarningLightsPage.scss */
 .maintenance {
   text-align: center;

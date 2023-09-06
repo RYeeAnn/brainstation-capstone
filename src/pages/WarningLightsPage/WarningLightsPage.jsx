@@ -20,7 +20,7 @@ import tractionControlIcon from "../../assets/traction-control.png";
 import tractionControlMalfunctionIcon from "../../assets/traction-control-malfunction.png";
 import transmissionTempIcon from "../../assets/transmission-temperature.png";
 import washerFluidIcon from "../../assets/washer-fluid.png";
-import close from "../../assets/close-sign.png";
+import close from "../../assets/close.png";
 import FooterComponent from "../../components/FooterComponent/FooterComponent";
 
 function WarningLightsPage() {
@@ -232,7 +232,7 @@ function WarningLightsPage() {
   return (
     <section className={`warningLights ${darkMode ? "dark-mode" : ""}`}>
       <div className="WarningLights__header">
-        <SecondHeaderComponent />
+        <SecondHeaderComponent headerClass={"red-header"}/>
       </div>
       <animated.svg
         xmlns="http://www.w3.org/2000/svg"

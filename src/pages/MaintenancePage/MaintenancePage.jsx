@@ -8,7 +8,7 @@ import wheels from "../../assets/wheel.png";
 import brakes from "../../assets/brake-disc.png";
 import airFilter from "../../assets/air-filter.png"
 import cabinFilter from "../../assets/cabin-filter.png"
-import close from "../../assets/close-sign.png";
+import close from "../../assets/close.png";
 import battery from "../../assets/battery.png";
 import coolant from "../../assets/coolant.png";
 import gearShift from "../../assets/gearshift.png";
@@ -31,7 +31,7 @@ function MaintenancePage() {
     {
       id: 1,
       title: "Oil Change",
-      description: "Regular oil changes are essential for maintaining your vehicle's engine health and prolonging its lifespan. Here's a comprehensive guide to performing an oil change",
+      description: "Regular oil changes are essential for maintaining your vehicle's engine health and prolonging its lifespan.",
       detailedDescription: (
         <div>
           <ul>
@@ -285,7 +285,7 @@ function MaintenancePage() {
   return (
     <section className={`maintenance ${darkMode ? "dark-mode" : ""}`}>
       <div className="maintenance__header">
-        <SecondHeaderComponent />
+        <SecondHeaderComponent headerClass="blue-header"/>
       </div>
       <animated.svg
         xmlns="http://www.w3.org/2000/svg"

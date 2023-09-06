@@ -1,6 +1,14 @@
 @use '../../partials/styles/mixins.scss' as *;
 @use '../../partials/styles/variables.scss' as *;
 
+.black-header {
+  background: linear-gradient(to top, #FFFFFF, #090505);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .about {
 
   font-family:'Verdana', sans-serif;

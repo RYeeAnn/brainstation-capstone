@@ -48,7 +48,7 @@ function HomePage() {
         </div>
         <div className="homePage__card">
           <div className="homePage__imgContainer">
-          <Link to='/troubleshootPage'><img src={tools} alt="Tools" className="homePage__img" /></Link>
+          <Link to='/troubleshootPage'><img src={gtr} alt="GTR" className="homePage__img" /></Link>
           </div>
           <div className="homePage__cardText">
             <h3>Troubleshoot</h3>
@@ -57,7 +57,7 @@ function HomePage() {
         </div>
         <div className="homePage__card">
           <div className="homePage__imgContainer">
-            <Link to='/PhotoGalleryPage'><img src={gtr} alt="Wipe" className="homePage__img" /></Link>
+            <Link to='/PhotoGalleryPage'><img src={tools} alt="Tools" className="homePage__img" /></Link>
           </div>
           <div className="homePage__cardText">
           <h3>Tools</h3>

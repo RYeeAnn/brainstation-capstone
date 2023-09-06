@@ -1,6 +1,14 @@
 @use '../../partials/styles/mixins.scss' as *;
 @use '../../partials/styles/variables.scss' as *;
 
+.green-header {
+  background: linear-gradient(to top, #FFFFFF, #216001);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .troubleshoot {
     display: flex;
     flex-direction: column;
@@ -40,7 +48,10 @@
     }
 
     &__placeholder--response p {
-      padding-bottom: 16rem;
+      padding-top: 10rem;
+      padding-bottom: 10rem;
+      width: 100%;
+      border: 2px solid black;
     }
   
     &__question {
@@ -82,11 +93,9 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
     }
 
     &__solutions {
-        border-bottom: 2px solid yellow;
         padding-bottom: 16px;
         font-size: 12px;
 

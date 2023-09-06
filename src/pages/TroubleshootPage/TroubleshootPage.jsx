@@ -204,7 +204,7 @@ function TroubleshootPage() {
   return (
     <section className={`troubleshoot ${darkMode ? "dark-mode" : ""}`}>
       <div className="troubleshoot__header">
-        <SecondHeaderComponent />
+        <SecondHeaderComponent headerClass={"green-header"}/>
         <ToastContainer />
       </div>
       <div className="troubleshoot__question">
@@ -303,9 +303,11 @@ function TroubleshootPage() {
                 Solution {index + 1}
               </h1>
               <p>{solution.solution}</p>
-              <p className="troubleshoot__solutions--instructions">
+              <h1 className="troubleshoot__solutions--tools">Tools Required:</h1>
+              <p>{solution.tools_required}</p>
+              <h1 className="troubleshoot__solutions--instructions">
                 Instructions:
-              </p>
+              </h1>
               {/* Dangerously syntax to my instructions into ordered list*/}
               <div
                 className="troubleshoot__solutions--instructions--list"
@@ -316,8 +318,6 @@ function TroubleshootPage() {
                 .map((paragraph, paragraphIndex) => (
                   <p key={paragraphIndex}>{paragraph}</p>
                 ))} */}
-              <p className="troubleshoot__solutions--tools">Tools Required:</p>
-              <p>{solution.tools_required}</p>
             </div>
           ))}
         </div>

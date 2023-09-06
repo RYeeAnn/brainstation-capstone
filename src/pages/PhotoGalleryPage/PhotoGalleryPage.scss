@@ -26,9 +26,13 @@
         .photo-gallery__item {
           img {
             max-width: 100%;
-            height: auto;
+            height: 60px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          }
+
+          &-title {
+            font-size: 8px;
           }
         }
       }
@@ -79,4 +83,5 @@
         }
       }
   }
+
   

@@ -239,6 +239,7 @@ function MaintenancePage() {
             className="maintenance__icon"
             onClick={() => handleMaintenanceClick(maintenance.id)}
           >
+            <div className="maintenance__icon-title">{maintenance.title}</div>
             <img src={maintenance.icon} alt={maintenance.title} />
           </div>
         ))}

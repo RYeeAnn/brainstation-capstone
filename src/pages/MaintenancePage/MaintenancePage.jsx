@@ -9,6 +9,14 @@ import brakes from "../../assets/brake-disc.png";
 import airFilter from "../../assets/air-filter.png"
 import cabinFilter from "../../assets/cabin-filter.png"
 import close from "../../assets/close-sign.png";
+import battery from "../../assets/battery.png";
+import coolant from "../../assets/coolant.png";
+import gearShift from "../../assets/gearshift.png";
+import headlight from "../../assets/headlight.png";
+import belt from "../../assets/belt.png";
+import tirePressure from "../../assets/tire-pressure.png";
+import wiper from "../../assets/wiper.png";
+import sparkPlug from "../../assets/spark-plug.png";
 import FooterComponent from "../../components/FooterComponent/FooterComponent";
 
 function MaintenancePage() {
@@ -59,7 +67,7 @@ function MaintenancePage() {
         <div>
           <ol>
             <li>Depending on driving conditions, You should rotate your tires roughly every 8,000 to 15,000km.</li>
-            <li>FYI, if you're driving your car like a maniac and drifting all around... That means your tires will wear faster!</li>
+            <li>If your steering wheel is shaking especially at high speeds like the highway, you most likely need a wheel balance.</li>
             <li>Check your tire pressures every now and then. generally on average vehicles roughly have 32-36psi</li>
             <li>There is a sticker/placard that shows your specific vehicle's recommended tire pressure, typically located on the driver's side door jam</li>
           </ol>
@@ -95,7 +103,6 @@ function MaintenancePage() {
             <li>The engine air filter is usually located in a rectangular or cylindrical air filter box under the hood of your car.</li>
             <li>In most vehicles, it's easily accessible by unclipping or unscrewing the air filter box cover.</li>
           </ol>
-          <p>Please note that the exact location can vary depending on the make and model of your vehicle. Refer to your vehicle's owner's manual for specific instructions on accessing and replacing these filters.</p>
         </div>
       ),
       icon: airFilter
@@ -117,6 +124,109 @@ function MaintenancePage() {
         </div>
       ),
       icon: cabinFilter
+    },    {
+      id: 7,
+      title: "Battery",
+      description: "",
+      detailedDescription: (
+        <div>
+          <ol>
+            <li></li>
+          </ol>
+        </div>
+      ),
+      icon: battery
+    },
+    {
+      id: 8,
+      title: "Coolant",
+      description: "",
+      detailedDescription: (
+        <div>
+          <ol>
+            <li></li>
+          </ol>
+        </div>
+      ),
+      icon: coolant
+    },
+    {
+      id: 9,
+      title: "Transmission",
+      description: "",
+      detailedDescription: (
+        <div>
+          <ol>
+            <li></li>
+          </ol>
+        </div>
+      ),
+      icon: gearShift
+    },
+    {
+      id: 10,
+      title: "Lights",
+      description: "",
+      detailedDescription: (
+        <div>
+          <ol>
+            <li></li>
+          </ol>
+        </div>
+      ),
+      icon: headlight
+    },
+    {
+      id: 11,
+      title: "Serpentine Belt",
+      description: "",
+      detailedDescription: (
+        <div>
+          <ol>
+            <li></li>
+          </ol>
+        </div>
+      ),
+      icon: belt
+    },
+    {
+      id: 12,
+      title: "Tire Pressure",
+      description: "",
+      detailedDescription: (
+        <div>
+          <ol>
+            <li></li>
+          </ol>
+        </div>
+      ),
+      icon: tirePressure
+    },
+    {
+      id: 13,
+      title: "Windshield Wipers",
+      description: "",
+      detailedDescription: (
+        <div>
+          <ol>
+            <li></li>
+          </ol>
+        </div>
+      ),
+      icon: wiper
+    },
+    {
+      id: 14,
+      title: "Spark Plugs",
+      description: "",
+      detailedDescription: (
+        <div>
+          <ol>
+            <li></li>
+          </ol>
+        </div>
+      ),
+      icon: sparkPlug
     },
 
   ];

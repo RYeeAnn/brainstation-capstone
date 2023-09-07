@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
-import SecondHeaderComponent from "../../components/SecondHeaderComponent/SecondHeaderComponent";
+import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
 import "./WarningLightsPage.scss";
 import absIcon from "../../assets/ABS-light.png";
 import airbagIcon from "../../assets/airbag-indicator.png";
@@ -232,9 +232,9 @@ function WarningLightsPage() {
   return (
     <section className={`warningLights ${darkMode ? "dark-mode" : ""}`}>
       <div className="WarningLights__header">
-        <SecondHeaderComponent headerClass={"red-header"} />
+        <HeaderComponent headerClass={"red-header"} />
       </div>
-      <animated.svg
+      <animated.svg className="darkmode"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"

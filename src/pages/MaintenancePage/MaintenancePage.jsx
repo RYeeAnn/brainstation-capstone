@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
-import SecondHeaderComponent from "../../components/SecondHeaderComponent/SecondHeaderComponent";
+import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
 import "./MaintenancePage.scss";
 import engineOil from "../../assets/engine-oil.png"
 import diagnosticTool from "../../assets/diagnostic-tool.png"
@@ -348,9 +348,9 @@ function MaintenancePage() {
   return (
     <section className={`maintenance ${darkMode ? "dark-mode" : ""}`}>
       <div className="maintenance__header">
-        <SecondHeaderComponent headerClass="blue-header" />
+        <HeaderComponent headerClass="blue-header" />
       </div>
-      <animated.svg
+      <animated.svg className="darkmode"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"

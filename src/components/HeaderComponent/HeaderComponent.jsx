@@ -6,10 +6,11 @@ import menu from "../../assets/menu.png";
 import home from "../../assets/home.svg";
 import user from "../../assets/user.svg";
 import at from "../../assets/@.svg";
-import alertTriangle from "../../assets/alert-triangle.svg"
+import alertTriangle from "../../assets/alert-triangle.svg";
 import tool from "../../assets/tool.svg";
-import messageCircle from "../../assets/message-circle.svg"
-import camera from "../../assets/camera.svg"
+import messageCircle from "../../assets/message-circle.svg";
+import helpCircle from "../../assets/help-circle.svg";
+import camera from "../../assets/camera.svg";
 
 function HeaderComponent() {
   class Example extends React.Component {
@@ -30,10 +31,10 @@ function HeaderComponent() {
                 </div>
               <Link to="/" id="home" className="menu__item" href="/"><img src={home} alt="Home" />Home</Link>
               <Link to="/aboutpage" id="about" className="menu__item"><img src={user} alt="User"/>About</Link>
-              <Link to="warningLightsPage" className="menu__secondItem menu__secondItem1"><img src={alertTriangle} alt="Alert" />Warning Lights</Link>
-              <Link to="maintenancePage" className="menu__secondItem"><img src={messageCircle} alt="Message Circle" />Maintenance</Link>
-              <Link to="troubleshootPage" className="menu__secondItem"><img src={tool} alt="Tool" />Troubleshoot</Link>
-              <Link to="PhotoGalleryPage" className="menu__secondItem"><img src={camera} alt="Help Circle" />Tools</Link>
+              <Link to="/warningLightsPage" className="menu__secondItem menu__secondItem1"><img src={alertTriangle} alt="Alert" />Warning Lights</Link>
+              <Link to="/maintenancePage" className="menu__secondItem"><img src={messageCircle} alt="Message Circle" />Maintenance</Link>
+              <Link to="/troubleshootPage" className="menu__secondItem"><img src={helpCircle} alt="Tool" />Troubleshoot</Link>
+              <Link to="/PhotoGalleryPage" className="menu__secondItem"><img src={tool} alt="Tool" />Tools</Link>
               </div>
             </main>
             </Menu>

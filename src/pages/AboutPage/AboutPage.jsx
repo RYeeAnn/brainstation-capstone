@@ -2,7 +2,7 @@
 import React from 'react';
 import { useSpring, animated } from "react-spring";
 import { useState, useEffect } from "react";
-import SecondHeaderComponent from '../../components/SecondHeaderComponent/SecondHeaderComponent';
+import HeaderComponent from '../../components/HeaderComponent/HeaderComponent';
 import './AboutPage.scss';
 import profileImage from '../../assets/ryan.png'; 
 import me from "../../assets/me.png"
@@ -57,10 +57,10 @@ function AboutPage() {
     return (
         <section className={`about ${darkMode ? "dark-mode" : ""}`}>
             <div className="about__header">
-                <SecondHeaderComponent headerClass={"black-header"} />
+                <HeaderComponent headerClass={"black-header"} />
             </div>
             <div className={`about__content ${darkMode ? "dark-mode" : ""}`}>
-            <animated.svg
+            <animated.svg className="darkmode"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"

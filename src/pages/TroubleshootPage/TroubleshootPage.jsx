@@ -3,7 +3,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSpring, animated } from "react-spring";
 import axios from "axios";
-import SecondHeaderComponent from "../../components/SecondHeaderComponent/SecondHeaderComponent";
+import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
 import "./TroubleshootPage.scss";
 import trash from "../../assets/trash.svg";
 import heart from "../../assets/heart.svg";
@@ -212,11 +212,11 @@ function TroubleshootPage() {
   return (
     <section className={`troubleshoot ${darkMode ? "dark-mode" : ""}`}>
       <div className="troubleshoot__header">
-        <SecondHeaderComponent headerClass={"lightBlue-header"} />
+        <HeaderComponent headerClass={"lightBlue-header"} />
         <ToastContainer />
       </div>
       <div className="troubleshoot__question">
-        <animated.svg
+        <animated.svg className="darkmode"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -356,7 +356,7 @@ function TroubleshootPage() {
           onChange={(event) => setUserComment(event.target.value)}
           id=""
         ></textarea>
-        <button className="troubleshoot__submit">Enter</button>
+        <button className="troubleshoot__submit">Submit</button>
       </form>
       <div className="troubleshoot__responses">
         {userComments.map((comment, index) => (

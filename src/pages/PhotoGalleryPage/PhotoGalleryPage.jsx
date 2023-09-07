@@ -1,7 +1,7 @@
 // PhotoGalleryPage.js
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
-import SecondHeaderComponent from "../../components/SecondHeaderComponent/SecondHeaderComponent";
+import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
 import "./PhotoGalleryPage.scss";
 import FooterComponent from "../../components/FooterComponent/FooterComponent";
 import flathead from "../../assets/flathead.jpg";
@@ -110,9 +110,9 @@ function PhotoGalleryPage() {
   return (
     <section className={`photo-gallery ${darkMode ? "dark-mode" : ""}`}>
       <div className="photo-gallery__header">
-        <SecondHeaderComponent headerClass={"yellow-header"} />
+        <HeaderComponent headerClass={"yellow-header"} />
       </div>
-      <animated.svg
+      <animated.svg className="darkmode"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"

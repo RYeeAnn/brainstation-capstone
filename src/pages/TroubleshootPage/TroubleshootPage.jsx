@@ -7,7 +7,9 @@ import SecondHeaderComponent from "../../components/SecondHeaderComponent/Second
 import "./TroubleshootPage.scss";
 import trash from "../../assets/trash.svg";
 import heart from "../../assets/heart.svg";
-import feedback from "../../assets/feedback.png"
+import feedback from "../../assets/feedback.png";
+import triangle from "../../assets/triangle.png";
+import smile from "../../assets/smile.png";
 import FooterComponent from "../../components/FooterComponent/FooterComponent";
 
 const PORT = process.env.REACT_APP_API_SERVER;
@@ -291,12 +293,12 @@ function TroubleshootPage() {
       ))
     ) : (
       <div className="troubleshoot__placeholder--response">
-        <p>Please click submit.</p>
+        <p>Please click submit. <img src={smile} alt="Smile" /></p>
       </div>
     )
   ) : (
     <div className="troubleshoot__placeholder--response">
-      <p>Select an issue to see the response.</p>
+      <p>Select an issue to see the response. <img src={triangle} alt="Triangle" /></p>
     </div>
   )}
 </div>

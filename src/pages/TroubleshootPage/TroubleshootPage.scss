@@ -45,14 +45,19 @@
     }
 
     &__placeholder--response p {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 10rem;
+      padding-bottom: 10rem;
+      border: 2px solid black;
       animation: flash 2s infinite;
       background: linear-gradient(45deg, grey, transparent);
     }
 
-    &__placeholder--response p {
-      padding-top: 10rem;
-      padding-bottom: 10rem;
-      border: 2px solid black;
+    &__placeholder--response img {
+      padding-top: 8px;
+      width: 40px;
     }
   
     &__question {

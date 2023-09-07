@@ -135,6 +135,7 @@ function MaintenancePage() {
       detailedDescription: (
         <div>
           <ol>
+            <li>Service experts estimate that you should replace your car battery every four to five years.</li>
             <li>Inspect the battery terminals for corrosion and clean them if necessary.</li>
             <li>Check the battery's fluid level (for non-maintenance-free batteries) and top it off with distilled water if needed.</li>
             <li>Consider having the battery tested to ensure it's holding a charge effectively.</li>

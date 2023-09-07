@@ -1,15 +1,15 @@
-@use "../../client/src/partials/styles/mixins.scss" as *;
-@use "../../client/src/partials/styles/variables.scss" as *;
+// @use "../../client/src/partials/styles/mixins.scss" as *;
+// @use "../../client/src/partials/styles/variables.scss" as *;
 
-.app {
-    font-family: Georgia, "Times New Roman", Times, serif;
+// .app {
+//     font-family: Georgia, "Times New Roman", Times, serif;
 
-}
+// }
 
-.close-button {
-    width: 10%;
+// .close-button {
+//     width: 10%;
 
-    @include tablet {
-        width: 5%;
-    }
-}
+//     @include tablet {
+//         width: 5%;
+//     }
+// }

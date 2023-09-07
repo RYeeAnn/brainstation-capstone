@@ -35,9 +35,10 @@ function MaintenancePage() {
       detailedDescription: (
         <div>
           <ul>
-            <li>Typically, you should change your oil every 7,000 to 10,000 kilometers or every 6 months.</li>
+            <li>You should change your oil at least twice per year to maintain a healthy engine</li>
+            <li>Typically, you should change your oil every <b>7,000</b> to <b>10,000</b> kilometers or every <b>6 months</b>.</li>
             <li>Select the appropriate type and viscosity of motor oil based on your vehicle's specifications and the climate in your region.</li>
-            <li>0w-20, 5w-20, 5w-30 are the most common oil viscosities from thinnest to thickest.</li>
+            <li><b>0w-20, 5w-20, 5w-30</b> are the most common oil viscosities from thinnest to thickest.</li>
           </ul>
         </div>
       ),
@@ -66,9 +67,10 @@ function MaintenancePage() {
       detailedDescription: (
         <div>
           <ol>
-            <li>Depending on driving conditions, You should rotate your tires roughly every 8,000 to 15,000km.</li>
+            <li>Depending on driving conditions, You should rotate your tires roughly every <b>8,000 to 15,000km</b>.</li>
             <li>If your steering wheel is shaking especially at high speeds like the highway, you most likely need a wheel balance.</li>
-            <li>Check your tire pressures every now and then. generally on average vehicles roughly have 32-36psi</li>
+            <li>Check your tire pressures every now and then. generally on average vehicles roughly have <b>30-36PSI</b></li>
+            <li>Note : Spare tires typically have <b>60PSI</b></li>
             <li>There is a sticker/placard that shows your specific vehicle's recommended tire pressure, typically located on the driver's side door jam</li>
           </ol>
         </div>
@@ -78,18 +80,17 @@ function MaintenancePage() {
 
     {
       id: 4,
-      title: "Brake Pads",
-      description: "Regularly inspecting your brakes and addressing issues promptly helps maintain safe braking performance.",
-      detailedDescription:(
+      title: "Tire Pressure",
+      description: "Proper tire pressure is crucial for safety, fuel efficiency, and tire longevity.",
+      detailedDescription: (
         <div>
           <ol>
-            <li>Periodically check brake pad thickness. If they are worn down to around 1/8 inch or less, it's time to replace them.</li>
-            <li>If you're driving and you feel vibration whenever you brake, you most likely have a warped disc rotor and need that machined or replaced</li>
-            <li>Consider having a professional perform a brake fluid flush every 2 years or as recommended in your vehicle's manual for optimal brake performance.</li>
+            <li>Regularly check and maintain the correct tire pressure as indicated in your vehicle's owner's manual or on the driver's side door jam sticker.</li>
+            <li>Proper tire pressure ensures safety, even tire wear, and optimal fuel efficiency.</li>
           </ol>
         </div>
       ),
-      icon: brakes
+      icon: tirePressure
     },
 
     {
@@ -100,6 +101,8 @@ function MaintenancePage() {
         <div>
           <ol>
             <li>Check and replace the engine air filter according to your vehicle's recommended maintenance schedule. A clean air filter ensures optimal engine performance and fuel efficiency.</li>
+            <li>Typically you should change it every <b>12,000km - 15,000km</b></li>
+            <li> If you drive in dusty/dirty conditions, you may be required to change your filter more often.</li>
             <li>The engine air filter is usually located in a rectangular or cylindrical air filter box under the hood of your car.</li>
             <li>In most vehicles, it's easily accessible by unclipping or unscrewing the air filter box cover.</li>
           </ol>
@@ -115,6 +118,7 @@ function MaintenancePage() {
       detailedDescription: (
         <div>
           <ol>
+            <li>Typically you should change it every <b>25,000km - 50,000km</b></li>
             <li>The cabin air filter is usually located behind the glove department or under the dashboard on the passenger side of the vehicle.</li>
             <li>Note : Nissans usually have their cabin air filters under the dashboard on the passenger's side and sometimes under the driver's side</li>
             <li>Some vehicles may have the cabin air filter in the engine bay, near the windshield wipers.</li>
@@ -197,20 +201,23 @@ function MaintenancePage() {
       ),
       icon: belt
     },
+
     {
       id: 12,
-      title: "Tire Pressure",
-      description: "Proper tire pressure is crucial for safety, fuel efficiency, and tire longevity.",
-      detailedDescription: (
+      title: "Brake Pads",
+      description: "Regularly inspecting your brakes and addressing issues promptly helps maintain safe braking performance.",
+      detailedDescription:(
         <div>
           <ol>
-            <li>Regularly check and maintain the correct tire pressure as indicated in your vehicle's owner's manual or on the driver's side door jam sticker.</li>
-            <li>Proper tire pressure ensures safety, even tire wear, and optimal fuel efficiency.</li>
+            <li>Periodically check brake pad thickness. If they are worn down to around <b>1/8 inch</b> or less, it's time to replace them.</li>
+            <li>If you're driving and you feel vibration whenever you brake, you most likely have a warped disc rotor and need that machined or replaced</li>
+            <li>Consider having a professional perform a brake fluid flush every <b>2 years</b> or as recommended in your vehicle's manual for optimal brake performance.</li>
           </ol>
         </div>
       ),
-      icon: tirePressure
+      icon: brakes
     },
+
     {
       id: 13,
       title: "Windshield Wipers",

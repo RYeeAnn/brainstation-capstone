@@ -12,7 +12,8 @@
 .troubleshoot {
     display: flex;
     flex-direction: column;
-    font-family:'Verdana', sans-serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
+
 
     &__title {
       font-size: 16px;
@@ -57,7 +58,8 @@
       text-align: center;
   
       select {
-        font-family:'Verdana, sans-serif';
+        font-family: Georgia, "Times New Roman", Times, serif;
+
         background-color: black;
         color: #fff;
         border: none;
@@ -67,7 +69,8 @@
       }
   
       button {
-        font-family:'Verdana, sans-serif';
+        font-family: Georgia, "Times New Roman", Times, serif;
+
         background-color: black;
         color: rgb(6, 50, 50);
         color: #fff;
@@ -149,7 +152,8 @@
     }
 
     &__name {
-      font-family:'Verdana, sans-serif';
+      font-family: Georgia, "Times New Roman", Times, serif;
+
       font-size: 1.2rem;
       width: 95%;
       margin-bottom: 10px;
@@ -158,7 +162,8 @@
     }
 
     &__comment {
-      font-family:'Verdana, sans-serif';
+      font-family: Georgia, "Times New Roman", Times, serif;
+
       font-size: 1.2rem;
       width: 95%;
       padding-bottom: 5rem;
@@ -220,7 +225,8 @@
     }
 
     &__submit {
-      font-family:'Verdana, sans-serif';
+      font-family: Georgia, "Times New Roman", Times, serif;
+
       background-color: black;
       color: rgb(6, 50, 50);
       color: #fff;

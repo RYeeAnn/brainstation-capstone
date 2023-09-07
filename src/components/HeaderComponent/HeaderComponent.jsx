@@ -33,7 +33,7 @@ function HeaderComponent() {
               <Link to="warningLightsPage" className="menu__secondItem menu__secondItem1"><img src={alertTriangle} alt="Alert" />Warning Lights</Link>
               <Link to="maintenancePage" className="menu__secondItem"><img src={messageCircle} alt="Message Circle" />Maintenance</Link>
               <Link to="troubleshootPage" className="menu__secondItem"><img src={tool} alt="Tool" />Troubleshoot</Link>
-              <Link to="PhotoGalleryPage" className="menu__secondItem"><img src={camera} alt="Help Circle" />Photo Gallery</Link>
+              <Link to="PhotoGalleryPage" className="menu__secondItem"><img src={camera} alt="Help Circle" />Tools</Link>
               </div>
             </main>
             </Menu>

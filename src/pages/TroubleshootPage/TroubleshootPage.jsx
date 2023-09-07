@@ -78,10 +78,16 @@ function TroubleshootPage() {
       });
     };
 
-    if (!userName || !userComment) {
+  if (!userName || !userComment) {
+    // Check if an error notification is already displayed
+    const existingErrorToast = toast.isActive("error-toast");
+
+    if (!existingErrorToast) {
       toast.error("Please fill in both your name and comment.", {
         position: toast.POSITION.TOP_RIGHT,
+        toastId: "error-toast", // Set a unique toastId
       });
+    }
       return;
     }
 

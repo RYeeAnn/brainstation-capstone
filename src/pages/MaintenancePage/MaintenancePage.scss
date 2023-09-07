@@ -40,10 +40,11 @@
 
     &-title {
       font-size: 12px;
+      padding-bottom: 8px;
     }
 
     img {
-      width: 100px;
+      width: 80px;
 
       @include tablet {
         width: 150px;

@@ -289,7 +289,7 @@ function WarningLightsPage() {
       </animated.svg>
       <h1 className="warningLights__title">Warning Lights</h1>
       <p className="warningLights__description">
-      To understand the warning light you're encountering on your dashboard, just click on it and discover its meaning!
+      To understand the warning light you're encountering on your dashboard, find the matching image and discover its meaning!
       </p>
       <div className="warningLights__content">
         {warningLightsData.map((warning) => (

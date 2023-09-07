@@ -210,7 +210,7 @@ function TroubleshootPage() {
   return (
     <section className={`troubleshoot ${darkMode ? "dark-mode" : ""}`}>
       <div className="troubleshoot__header">
-        <SecondHeaderComponent headerClass={"green-header"} />
+        <SecondHeaderComponent headerClass={"lightBlue-header"} />
         <ToastContainer />
       </div>
       <div className="troubleshoot__question">

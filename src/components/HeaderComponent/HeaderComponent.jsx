@@ -30,7 +30,7 @@ function HeaderComponent() {
                   Cruisin'
                 </div>
               <Link to="/" id="home" className="menu__item" href="/"><img src={home} alt="Home" />Home</Link>
-              <Link to="/aboutpage" id="about" className="menu__item"><img src={user} alt="User"/>About</Link>
+              <Link to="/aboutpage" id="about" className="menu__item"><img src={user} alt="User"/>About Me</Link>
               <Link to="/warningLightsPage" className="menu__secondItem menu__secondItem1"><img src={alertTriangle} alt="Alert" />Warning Lights</Link>
               <Link to="/maintenancePage" className="menu__secondItem"><img src={messageCircle} alt="Message Circle" />Maintenance</Link>
               <Link to="/troubleshootPage" className="menu__secondItem"><img src={helpCircle} alt="Tool" />Troubleshoot</Link>

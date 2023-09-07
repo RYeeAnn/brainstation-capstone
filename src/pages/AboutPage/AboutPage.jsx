@@ -9,6 +9,11 @@ import me from "../../assets/me.png"
 import FooterComponent from '../../components/FooterComponent/FooterComponent';
 
 function AboutPage() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+  
     const [darkMode, setDarkMode] = useState(false);
 
     const properties = {
@@ -117,7 +122,7 @@ function AboutPage() {
                     <img src={profileImage} alt="Profile" />
                 </div>
                 <div className={`about__text ${darkMode ? "dark-mode" : ""}`}>
-                    <h2>About Me <img className="about__text--img" src={me} alt="Me" /></h2>
+                    <h2>About Me</h2>
                     <p>
                         Hello! I'm Ryan, a passionate car enthusiast and love to DIY my own vehicle. I have a deep love for cars and a strong desire to help people understand the ins and outs of vehicle maintenance.
                     </p>

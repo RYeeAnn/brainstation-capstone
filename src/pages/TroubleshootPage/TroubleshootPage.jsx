@@ -68,12 +68,10 @@ function TroubleshootPage() {
 
   const handleCommentSubmit = (event) => {
     event.preventDefault();
-     const form = document.querySelector(".form")
+
     const commentData = {
-      name: event.target.name.value,
-      comment: event.target.comment.value,
-      // name: userName,
-      // comment: userComment,
+      name: userName,
+      comment: userComment,
     };
 
     const toastMessage = () => {
@@ -82,7 +80,7 @@ function TroubleshootPage() {
       });
     };
 
-  if (!commentData.name || !commentData.comment) {
+  if (!userName || !userComment) {
     // Check if an error notification is already displayed
     const existingErrorToast = toast.isActive("error-toast");
 
@@ -94,7 +92,6 @@ function TroubleshootPage() {
     }
       return;
     }
-    console.log("about to make call", commentData)
 
     axios
       .post(`${PORT}/troubleshootPage/comments`, commentData)
@@ -102,7 +99,6 @@ function TroubleshootPage() {
         setUserComment("");
         setUserName("");
         toastMessage();
-        form.reset();
 
         return axios.get(`${PORT}/troubleshootPage/comments`);
       })
@@ -339,7 +335,7 @@ function TroubleshootPage() {
       </div>
       <form
         onSubmit={handleCommentSubmit}
-        className={`form troubleshoot__comments ${
+        className={`troubleshoot__comments ${
           darkMode ? "dark-mode" : ""
         }`}
       >
@@ -347,18 +343,17 @@ function TroubleshootPage() {
           className={`troubleshoot__name ${darkMode ? "dark-mode" : ""}`}
           placeholder="Enter your name..."
           type="text"
-          name="name"
-          // value={userName}
-          // onChange={(event) => setUserName(event.target.value)}
+          value={userName}
+          onChange={(event) => setUserName(event.target.value)}
         />
         <textarea
           className={`troubleshoot__comment ${
             darkMode ? "dark-mode" : ""
           }`}
           placeholder="Enter comment..."
-          name="comment"
-          // value={userComment}
-          // onChange={(event) => setUserComment(event.target.value)}
+          name=""
+          value={userComment}
+          onChange={(event) => setUserComment(event.target.value)}
           id=""
         ></textarea>
         <button className="troubleshoot__submit">Submit</button>

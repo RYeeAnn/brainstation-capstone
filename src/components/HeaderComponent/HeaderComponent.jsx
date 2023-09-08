@@ -13,13 +13,8 @@ import helpCircle from "../../assets/help-circle.svg";
 import camera from "../../assets/camera.svg";
 
 function HeaderComponent() {
-  class Example extends React.Component {
-    showSettings(event) {
-      event.preventDefault();
-    }
 
-    render() {
-      return (
+      return  (
         <div id="outer-container">
             <Menu customBurgerIcon={ <img src={menu} /> } 
                   pageWrapId={ "page-wrap" } 
@@ -41,8 +36,6 @@ function HeaderComponent() {
         </div>
       );
     }
-  }
-  return <Example />
-}
+
 
 export default HeaderComponent;

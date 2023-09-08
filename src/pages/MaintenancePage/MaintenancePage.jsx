@@ -40,7 +40,7 @@ function MaintenancePage() {
             <li>You should change your oil every <b>7,000km</b> - <b>10,000km</b> or every <b>6 months</b>.</li>
             <li>Select the appropriate type and viscosity of motor oil based on your vehicle's specifications and the climate in your region.</li>
             <li><b>0w-20, 5w-20, 5w-30</b> are the most common oil viscosities from thinnest to thickest.</li>
-            <li>Do not procrastinate on changing you engine oil! The longer you wait, the more you will harm your engine :(</li>
+            <li>Do not procrastinate on changing your engine oil! The longer you wait, the more you will harm your engine :(</li>
           </ul>
         </div>
       ),

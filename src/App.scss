@@ -1,15 +1,26 @@
-@use './partials/styles/typography.scss';
+@use "./partials/styles/typography.scss";
 
 .app {
-    font-family: 'Handlee', Georgia, 'Times New Roman', Times, serif;
-
+  font-family: "Handlee", Georgia, "Times New Roman", Times, serif;
 }
 
 .close-button {
-    width: 30px;
+  width: 30px;
 }
 
 .darkmode {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.modal {
+  &-title {
+    border-bottom: 2px solid lightblue;
+    padding-bottom: 8px;
   }
+
+  &-description {
+    font-weight: bold;
+    color: yellow;
+  }
+}

@@ -53,11 +53,11 @@ function MaintenancePage() {
       description: "Maintaining your transmission is crucial for smooth and reliable shifting.",
       detailedDescription: (
         <div>
-          <ol>
+          <ul>
             <li>You should change your transmission oil every <b>50,000km or every 2 years</b></li>
             <li>Replace the transmission fluid and filter as recommended by the manufacturer.</li>
           <li>Inspect for transmission fluid leaks and repair as needed.</li>
-          </ol>
+          </ul>
         </div>
       ),
       icon: gearShift
@@ -69,13 +69,13 @@ function MaintenancePage() {
       description: "Maintaining your vehicle's tires is essential for safety and performance. Here are some DIY tire maintenance tips:",
       detailedDescription: (
         <div>
-          <ol>
+          <ul>
             <li>Depending on driving conditions, You should rotate your tires roughly every <b>8,000km - 15,000km</b>.</li>
             <li>Check your tire pressures every now and then. generally on average vehicles roughly have <b>30-36PSI</b></li>
             <li>Note : Spare tires typically have <b>60PSI</b></li>
             <li>There is a sticker/placard that shows your specific vehicle's recommended tire pressure, typically located on the driver's side door jam</li>
             <li>If your steering wheel is shaking especially at high speeds like the highway, you most likely need a wheel balance.</li>
-          </ol>
+          </ul>
         </div>
       ),
       icon: wheels
@@ -87,11 +87,11 @@ function MaintenancePage() {
       description: "Proper tire pressure is crucial for safety, fuel efficiency, and tire longevity.",
       detailedDescription: (
         <div>
-          <ol>
+          <ul>
             <li>Regularly check and maintain the correct tire pressure as indicated in your vehicle's owner's manual or on the driver's side door jam sticker.</li>
             <li>You should never need to pay to have air added into your tires</li>
             <li>Every gas station typically should have a station where you can pump air into your tires.</li>
-          </ol>
+          </ul>
         </div>
       ),
       icon: tirePressure
@@ -103,12 +103,12 @@ function MaintenancePage() {
       description: "Regularly replacing the Engine Air Filter is essential for a healthy engine. It will ensure optimal engine performance and fuel efficiency",
       detailedDescription: (
         <div>
-          <ol>
+          <ul>
             <li>You should change your engine air filter every <b>12,000km - 15,000km</b></li>
             <li> If you drive in dusty/dirty conditions, you may be required to change your filter more often.</li>
             <li>The engine air filter is usually located in a rectangular or cylindrical air filter box under the hood of your car.</li>
             <li>In most vehicles, it's easily accessible by unclipping or unscrewing the air filter box cover.</li>
-          </ol>
+          </ul>
         </div>
       ),
       icon: airFilter
@@ -120,13 +120,13 @@ function MaintenancePage() {
       description: "Regularly replacing the Cabin Air Filter is essential for a healthy and comfortable cabin environment.",
       detailedDescription: (
         <div>
-          <ol>
+          <ul>
             <li>You should change your cabin air filter every <b>25,000km - 50,000km</b></li>
             <li>The cabin air filter is usually located behind the glove department or under the dashboard on the passenger side of the vehicle.</li>
             <li>Note : Nissans usually have their cabin air filters under the dashboard on the passenger's side and sometimes under the driver's side</li>
             <li>Some vehicles may have the cabin air filter in the engine bay, near the windshield wipers. Usually this goes for European vehicles.</li>
             <li>Access to the cabin air filter may require removing the glove compartment or a cover panel.</li>
-          </ol>
+          </ul>
           <p>Please note that the exact location can vary depending on the make and model of your vehicle. Refer to your vehicle's owner's manual for specific instructions on accessing and replacing these filters.</p>
         </div>
       ),
@@ -139,13 +139,13 @@ function MaintenancePage() {
       description: "Regularly inspecting your car's battery can help prevent unexpected breakdowns and ensure reliable starting power.",
       detailedDescription: (
         <div>
-          <ol>
+          <ul>
             <li>You should replace your car battery every <b>4 - 5 years</b>.</li>
             <li>Inspect the battery terminals for corrosion and clean them if necessary.</li>
             <li>An indication of corrosion is if you see blue powder around the terminals. Pour boiling hot water on the terminals to clean.</li>
             <li>Check the battery's fluid level (for non-maintenance-free batteries) and top it off with distilled water if needed.</li>
             <li>Consider having the battery tested to ensure it's holding a charge effectively.</li>
-          </ol>
+          </ul>
         </div>
       ),
       icon: battery
@@ -157,11 +157,11 @@ function MaintenancePage() {
       description: "The alternator is responsible for charging you're battery while the vehicle is running.",
       detailedDescription: (
         <div>
-          <ol>
+          <ul>
           <li>Test your alternator if you experience dimming headlights or a dead battery.</li>
           <li>Check the alternator belt for wear and proper tension.</li>
           <li>If the alternator is failing, it should be replaced to avoid electrical issues.</li>
-          </ol>
+          </ul>
         </div>
       ),
       icon: alternator
@@ -173,10 +173,10 @@ function MaintenancePage() {
       description: "The check engine light, also known as the malfunction indicator light (MIL), indicates that the vehicle's onboard computer has detected a problem with the engine, emissions, or other related systems. It's recommended to use a diagnostic trouble code (DTC) scanner to retrieve the specific error code.",
       detailedDescription: (
         <div>
-          <ol>
+          <ul>
             <li>If you do not have a DTC scanner, you can usually go by an auto shop or dealership to get it scanned for free</li>
             <li>Scanning DTC lights should always be free of charge so if they try to make you pay, deny it and find another auto shop or dealership to go to!</li>
-          </ol>
+          </ul>
         </div>
       ),
       icon: diagnosticTool,
@@ -188,10 +188,10 @@ function MaintenancePage() {
       description: "Properly functioning lights are essential for your safety and the safety of others on the road.",
       detailedDescription: (
         <div>
-          <ol>
+          <ul>
             <li>Regularly check all exterior and interior lights, including headlights, taillights, turn signals, brake lights, and interior bulbs.</li>
             <li>Replace any burned-out bulbs promptly to ensure visibility and safety.</li>
-          </ol>
+          </ul>
         </div>
       ),
       icon: headlight
@@ -203,10 +203,10 @@ function MaintenancePage() {
       description: "The serpentine belt powers many of your engine's components. It provides power to many vital components in your car like the alternator, power steering pump, air conditioning and sometimes the water pump",
       detailedDescription: (
         <div>
-          <ol>
+          <ul>
             <li>Inspect the serpentine belt for signs of wear, such as cracks, fraying, or glazing.</li>
             <li>Replace the serpentine belt as recommended by the manufacturer or if you notice any damage.</li>
-          </ol>
+          </ul>
         </div>
       ),
       icon: belt
@@ -218,11 +218,11 @@ function MaintenancePage() {
       description: "Regularly inspecting your brakes and addressing issues promptly helps maintain safe braking performance.",
       detailedDescription:(
         <div>
-          <ol>
+          <ul>
             <li>Periodically check brake pad thickness. If they are worn down to around <b>1/8 inch</b> or less, or if you hear squeaky noises every time you apply the brakes, it's time to replace them.</li>
             <li>If you're driving and you feel vibration whenever you brake, you most likely have a warped disc rotor and need that machined or replaced</li>
             <li>Consider having a professional perform a brake fluid flush every <b>2 years</b> or as recommended in your vehicle's manual for optimal brake performance.</li>
-          </ol>
+          </ul>
         </div>
       ),
       icon: brakes
@@ -234,10 +234,10 @@ function MaintenancePage() {
       description: "Well-maintained windshield wipers are essential for visibility during rainy or snowy conditions.",
       detailedDescription: (
         <div>
-          <ol>
+          <ul>
             <li>Inspect windshield wiper blades for signs of wear or damage, such as streaking or skipping.</li>
             <li>Replace windshield wiper blades as needed for clear visibility during rainy or snowy conditions.</li>
-          </ol>
+          </ul>
         </div>
       ),
       icon: wiper
@@ -249,11 +249,11 @@ function MaintenancePage() {
       description: "Spark plugs play a critical role in your engine's performance and fuel efficiency.",
       detailedDescription: (
         <div>
-          <ol>
+          <ul>
             <li>You should change your spark plugs roughly every 150,000km - 160,000km</li>
             <li>Check and replace spark plugs according to your vehicle's recommended maintenance schedule.</li>
             <li>Worn or fouled spark plugs can lead to poor engine performance and reduced fuel efficiency.</li>
-          </ol>
+          </ul>
         </div>
       ),
       icon: sparkPlug
@@ -265,13 +265,13 @@ function MaintenancePage() {
       description: "Proper engine coolant levels are essential for maintaining your engine's temperature and preventing overheating.",
       detailedDescription: (
         <div>
-          <ol>
+          <ul>
             <li>IMPORTANT: Do not open the metal coolant cap that says Warning or Danger sticker when its hot. Let your vehicle cool down first!</li>
             <li>Regularly check the coolant level in the overflow tank (clear white tank) when the engine is cool.</li>
             <li>Top off the coolant with a 50/50 mix of coolant and water if it's low.</li>
             <li>DO NOT add just water</li>
             <li>Inspect hoses and connections for coolant leaks and repair as needed.</li>
-          </ol>
+          </ul>
         </div>
       ),
       icon: coolant
@@ -283,10 +283,10 @@ function MaintenancePage() {
       description: "Maintaining your vehicle's air conditioner ensures a comfortable driving experience.",
       detailedDescription: (
         <div>
-          <ol>
+          <ul>
           <li>If your A/C is not cooling effectively, you most likely need to have it recharged by a professional mechanic.</li>
           <li>Inspect the A/C compressor and belts for wear and tear.</li>
-          </ol>
+          </ul>
         </div>
       ),
       icon: airCon

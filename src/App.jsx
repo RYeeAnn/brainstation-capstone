@@ -14,10 +14,10 @@ function App() {
       <Routes>
         <Route path='/' element={< HomePage />} />
         <Route path='/AboutPage' element={< AboutPage />} />
-        <Route path='/MaintenancePage' element={< MaintenancePage />} />
         <Route path='/WarningLightsPage' element={< WarningLightsPage />} />
-        <Route path='/PhotoGalleryPage' element={<PhotoGalleryPage />} />
+        <Route path='/MaintenancePage' element={< MaintenancePage />} />
         <Route path='/TroubleshootPage' element={<TroubleshootPage />} />
+        <Route path='/PhotoGalleryPage' element={<PhotoGalleryPage />} />
       </Routes>
       </BrowserRouter>
     </div>

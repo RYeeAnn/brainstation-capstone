@@ -29,7 +29,7 @@ function HeaderComponent() {
               <Link to="/warningLightsPage" className="menu__secondItem menu__secondItem1"><img src={alertTriangle} alt="Alert" />Warning Lights</Link>
               <Link to="/maintenancePage" className="menu__secondItem"><img src={messageCircle} alt="Message Circle" />Maintenance</Link>
               <Link to="/troubleshootPage" className="menu__secondItem"><img src={helpCircle} alt="Tool" />Troubleshoot</Link>
-              <Link to="/PhotoGalleryPage" className="menu__secondItem"><img src={tool} alt="Tool" />Tools</Link>
+              {/* <Link to="/PhotoGalleryPage" className="menu__secondItem"><img src={tool} alt="Tool" />Tools</Link> */}
               </div>
             </main>
             </Menu>

@@ -13,7 +13,6 @@
 /* WarningLightsPage.scss */
 .maintenance {
   text-align: center;
-  font-family: Georgia, "Times New Roman", Times, serif;
 
   h1 {
     font-size: 28px;
@@ -36,9 +35,14 @@
   .maintenance__icon {
     cursor: pointer;
     transition: transform 0.2s;
-    width: 45%;
+    width: 28%;
+
+    @include tablet {
+      width: 20%;
+    }
 
     &-title {
+      font-weight: bold;
       font-size: 12px;
       padding-bottom: 8px;
     }

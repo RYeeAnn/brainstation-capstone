@@ -12,7 +12,6 @@
 .troubleshoot {
     display: flex;
     flex-direction: column;
-    font-family: Georgia, "Times New Roman", Times, serif;
 
 
     &__title {
@@ -63,7 +62,7 @@
       text-align: center;
   
       select {
-        font-family: Georgia, "Times New Roman", Times, serif;
+        font-family: 'Handlee';
 
         background-color: black;
         color: #fff;
@@ -74,7 +73,7 @@
       }
   
       button {
-        font-family: Georgia, "Times New Roman", Times, serif;
+        font-family: 'Handlee';
 
         background-color: black;
         color: rgb(6, 50, 50);
@@ -161,7 +160,7 @@
     }
 
     &__name {
-      font-family: Georgia, "Times New Roman", Times, serif;
+      font-family: 'Handlee';
 
       font-size: 1.2rem;
       width: 95%;
@@ -179,7 +178,7 @@
     }
 
     &__comment {
-      font-family: Georgia, "Times New Roman", Times, serif;
+      font-family: 'Handlee';
 
       font-size: 1.2rem;
       width: 95%;
@@ -250,7 +249,7 @@
     }
 
     &__submit {
-      font-family: Georgia, "Times New Roman", Times, serif;
+      font-family: 'Handlee';
 
       background-color: black;
       color: rgb(6, 50, 50);

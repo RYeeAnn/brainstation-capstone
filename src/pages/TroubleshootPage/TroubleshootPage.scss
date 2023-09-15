@@ -94,7 +94,7 @@
       border-radius: 10px;
       padding: 16px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('../../assets/subie23.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -102,7 +102,7 @@
 
     &__solutions {
         padding-bottom: 16px;
-        font-size: 12px;
+        font-size: 16px;
 
         @include tablet {
           font-size: 16px;

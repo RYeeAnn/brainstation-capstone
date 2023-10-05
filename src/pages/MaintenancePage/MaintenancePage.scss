@@ -99,6 +99,10 @@
       p {
         font-size: 12px;
         margin-bottom: 20px;
+
+        @include tablet {
+          font-size: 16px;
+        }
       }
 
       button {
@@ -146,4 +150,17 @@
   @include tablet {
     width: 20%;
   }
+}
+
+.description-container {
+  text-align: start;
+  font-size: 2rem;
+
+  @include tablet {
+    width: 40rem;
+  }
+}
+
+.modal-description {
+  text-align: center;
 }

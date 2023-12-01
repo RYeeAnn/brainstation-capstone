@@ -55,15 +55,15 @@ function HomePage() {
             <p>Explore troubleshooting guides for common car problems.</p>
           </div>
         </div>
-        {/* <div className="homePage__card">
+        <div className="homePage__card">
           <div className="homePage__imgContainer">
-            <Link to='/PhotoGalleryPage'><img src={tools} alt="Tools" className="homePage__img" /></Link>
+            <Link to='/ChatBotPage'><img src={tools} alt="Tools" className="homePage__img" /></Link>
           </div>
           <div className="homePage__cardText">
-          <h3>Tools</h3>
-          <p>Explore a collection of tools.</p>
+          <h3>ChatBot (Under Construction)</h3>
+          <p>Ask me questions!</p>
           </div>
-        </div> */}
+        </div>
       </section>
 
       <section className="footer">

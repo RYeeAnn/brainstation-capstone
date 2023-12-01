@@ -1,0 +1,123 @@
+@use '../../partials/styles/mixins.scss' as *;
+@use '../../partials/styles/variables.scss' as *;
+
+/* ChatbotPage.scss */
+.chatbot {
+
+  text-align: center;
+
+      &.dark-mode {
+        background-color: #1a1a1a; /* Dark background color */
+        color: #ffffff;
+      }
+    
+      .dark-mode-toggle {
+        margin-top: 20px;
+        button {
+          background-color: #007bff;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.2s;
+    
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+      }
+  }
+
+  //chatbot
+  .container {
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+      padding: 4rem;
+    }
+  }
+  
+  .chat-window {
+    width: 350px;
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+  }
+  
+  .chat-messages {
+    background-color: rgb(225, 224, 224);
+    color: black;
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .message {
+    background-color: #e4f5d4;
+    padding: 8px 10px;
+    border-radius: 16px;
+    max-width: 70%;
+    align-self: flex-start; /* Change from flex-end to flex-start for bot messages */
+    word-wrap: break-word;
+  }
+  
+  .user {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+  
+  .bot {
+    background-color: #f1f0f0;
+    align-self: flex-start; /* Bot messages are now on the left */
+    margin-right: auto;
+  }
+  
+  .message-input {
+    border-top: 1px solid #e0e0e0;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+  
+    input {
+      flex-grow: 1;
+      padding: 8px;
+      border-radius: 20px;
+      border: 1px solid #d0d0d0;
+      outline: none;
+  
+      &:focus {
+        border-color: #a0a0a0;
+      }
+    }
+  
+    button {
+      padding: 8px 12px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: end;
+  }
+
+  

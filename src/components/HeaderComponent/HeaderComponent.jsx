@@ -27,9 +27,9 @@ function HeaderComponent() {
               <Link to="/" id="home" className="menu__item" href="/"><img src={home} alt="Home" />Home</Link>
               <Link to="/aboutpage" id="about" className="menu__item"><img src={user} alt="User"/>About Me</Link>
               <Link to="/warningLightsPage" className="menu__secondItem menu__secondItem1"><img src={alertTriangle} alt="Alert" />Warning Lights</Link>
-              <Link to="/maintenancePage" className="menu__secondItem"><img src={messageCircle} alt="Message Circle" />Maintenance</Link>
-              <Link to="/troubleshootPage" className="menu__secondItem"><img src={helpCircle} alt="Tool" />Troubleshoot</Link>
-              {/* <Link to="/PhotoGalleryPage" className="menu__secondItem"><img src={tool} alt="Tool" />Tools</Link> */}
+              <Link to="/maintenancePage" className="menu__secondItem"><img src={tool} alt="Message Circle" />Maintenance</Link>
+              <Link to="/troubleshootPage" className="menu__secondItem"><img src={helpCircle} alt="Troubleshoot" />Troubleshoot</Link>
+              <Link to="/ChatBotPage" className="menu__secondItem"><img src={messageCircle} alt="Chatbot" />ChatBot</Link>
               </div>
             </main>
             </Menu>

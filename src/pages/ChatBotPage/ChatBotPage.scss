@@ -33,10 +33,7 @@
   .container {
     display: flex;
     justify-content: center;
-
-    @include tablet {
-      padding: 4rem;
-    }
+    height: 100vh;
   }
   
   .chat-window {

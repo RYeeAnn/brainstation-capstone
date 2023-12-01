@@ -169,6 +169,10 @@ function ChatBotPage() {
         </animated.g>
       </animated.svg>
 
+      <div>
+        <h1>Under Construction</h1>
+      </div>
+
       <div className="container">
         <div className="chat-window">
           <div className="chat-messages" ref={messagesEndRef}>

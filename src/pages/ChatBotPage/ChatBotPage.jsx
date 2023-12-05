@@ -6,6 +6,8 @@ import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
 import "./ChatBotPage.scss";
 import FooterComponent from "../../components/FooterComponent/FooterComponent";
 
+require('dotenv').config();
+
 function ChatBotPage() {
   const [darkMode, setDarkMode] = useState(false);
   const [message, setMessage] = useState('');

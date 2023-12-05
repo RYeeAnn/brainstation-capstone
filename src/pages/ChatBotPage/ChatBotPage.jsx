@@ -43,7 +43,7 @@ function ChatBotPage() {
   
   const callChatbotAPI = (userMessage) => {
     console.log('Server URL', process.env.SERVER_URL);
-    const endpoint = process.env.SERVER_URL || 'http://localhost:8080'; // Pointing to your backend server
+    const endpoint = process.env.SERVER_URL; // Pointing to your backend server
   
     // The body of the request should match your backend expectations
     const body = {

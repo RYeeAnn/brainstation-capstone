@@ -40,19 +40,19 @@ function ChatBotPage() {
   };
   
   const callChatbotAPI = (userMessage) => {
-    const endpoint = process.env.SERVER_URL || 'http://localhost:8080' // Pointing to your backend server
-
+    const endpoint = process.env.SERVER_URL || 'http://localhost:8080'; // Pointing to your backend server
+  
     // The body of the request should match your backend expectations
     const body = {
       inputText: userMessage, // User input text
       userId: 'WebAppUser', // A unique ID for the user, you might want to generate this for each user session
     };
-
+  
     return axios
       .post(endpoint, body)
       .then((response) => {
         // Handle any kind of response from the backend
-        const message = response.data.message;
+        const message = response.data?.message || "No response message"; // Access response.data.message, with fallback if not present
         return message;
       })
       .catch((error) => {
@@ -60,7 +60,7 @@ function ChatBotPage() {
         // Handle errors gracefully
         return "There was an error processing your message.";
       });
-  };
+  };  
 
   useEffect(() => {
     window.scrollTo(0, 0);

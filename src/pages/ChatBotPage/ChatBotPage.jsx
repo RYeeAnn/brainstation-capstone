@@ -6,8 +6,6 @@ import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
 import "./ChatBotPage.scss";
 import FooterComponent from "../../components/FooterComponent/FooterComponent";
 
-require('dotenv').config();
-
 function ChatBotPage() {
   const [darkMode, setDarkMode] = useState(false);
   const [message, setMessage] = useState('');
@@ -42,8 +40,7 @@ function ChatBotPage() {
   };
   
   const callChatbotAPI = (userMessage) => {
-    console.log('Server URL', process.env.REACT_APP_SERVER_URL);
-    const endpoint = process.env.REACT_APP_SERVER_URL; // Pointing to your backend server
+    const endpoint = 'https://cruisin-df8cc0f5b5d6.herokuapp.com' // Pointing to your backend server
   
     // The body of the request should match your backend expectations
     const body = {

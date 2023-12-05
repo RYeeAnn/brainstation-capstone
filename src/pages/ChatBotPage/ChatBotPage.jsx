@@ -40,7 +40,7 @@ function ChatBotPage() {
   };
   
   const callChatbotAPI = (userMessage) => {
-    const endpoint = 'https://cruisin-df8cc0f5b5d6.herokuapp.com' // Pointing to your backend server
+    const endpoint = 'https://cruisin-df8cc0f5b5d6.herokuapp.com/lex' // Pointing to your backend server
   
     // The body of the request should match your backend expectations
     const body = {

@@ -19,7 +19,7 @@
       },
       "function": {
         "cruisin6fd6e86aCustomMessage": {
-          "REDIRECTURL": "https://cruisin.netlify.app/",
+          "REDIRECTURL": "https://cruisin.netlify.app",
           "EMAILSUBJECT": "Account Confirmation - Please Verify Your Email",
           "EMAILMESSAGE": "Thank you for registering! To complete the registration process and confirm your account.",
           "deploymentBucketName": "amplify-cruisin-dev-130224-deployment",

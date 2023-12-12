@@ -1,6 +1,10 @@
 @use '../../partials/styles/mixins.scss' as *;
 @use '../../partials/styles/variables.scss' as *;
 
+body {
+  margin: 0;
+}
+
 .homePage {
   position: relative;
   width: 100%;
@@ -79,4 +83,16 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.loginoutButton {
+  display: flex;
+  gap: 16px;
+  justify-content: end;
+  height: 6vh;
+  padding: 16px;
+}
+
+.profileImg {
+  border-radius: 16px;
 }

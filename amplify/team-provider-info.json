@@ -1,0 +1,31 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cruisin-dev-130224-authRole",
+      "UnauthRoleArn": "arn:aws:iam::324700362029:role/amplify-cruisin-dev-130224-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::324700362029:role/amplify-cruisin-dev-130224-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cruisin-dev-130224-deployment",
+      "UnauthRoleName": "amplify-cruisin-dev-130224-unauthRole",
+      "StackName": "amplify-cruisin-dev-130224",
+      "StackId": "arn:aws:cloudformation:us-east-1:324700362029:stack/amplify-cruisin-dev-130224/17da5570-960d-11ee-9333-127dd2cc4ca1",
+      "AmplifyAppId": "d3uo3txiudwc0",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-cruisin-dev-130224-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "cruisin6fd6e86a": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "cruisin6fd6e86aCustomMessage": {
+          "REDIRECTURL": "https://cruisin.netlify.app/",
+          "EMAILSUBJECT": "Account Confirmation - Please Verify Your Email",
+          "EMAILMESSAGE": "Thank you for registering! To complete the registration process and confirm your account.",
+          "deploymentBucketName": "amplify-cruisin-dev-130224-deployment",
+          "s3Key": "amplify-builds/cruisin6fd6e86aCustomMessage-6e7262473032794a326e-build.zip"
+        }
+      }
+    }
+  }
+}

@@ -8,13 +8,36 @@ import repair from "../../assets/repair.jpg";
 import gtr from "../../assets/purplegtr.jpg";
 import speedometer from "../../assets/speedo.jpg";
 import tools from "../../assets/tools.jpg";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function HomePage() {
+  const { isAuthenticated, loginWithRedirect, logout, user, isLoading } = useAuth0();
 
   return (
     <>
       <section className="homePage">
         <HeaderComponent />
+        <div className="loginoutButton">
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : (
+            <>
+              {isAuthenticated ? (
+                <>
+                  {user?.picture && <img className="profileImg" src={user.picture} alt={user?.name} />}
+                  <p>Hello, {user.name}!</p>
+                  <button className="logoutButton" onClick={() => logout({ returnTo: window.location.origin })}>
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <button className="loginButton" onClick={() => loginWithRedirect()}>
+                  Login
+                </button>
+              )}
+            </>
+          )}
+        </div>
         <div className="homePage__hero">
           <div className="homePage__heroText">
             <h1 className="homePage__title">
@@ -48,7 +71,7 @@ function HomePage() {
         </div>
         <div className="homePage__card">
           <div className="homePage__imgContainer">
-          <Link to='/troubleshootPage'><img src={gtr} alt="GTR" className="homePage__img" /></Link>
+            <Link to='/troubleshootPage'><img src={gtr} alt="GTR" className="homePage__img" /></Link>
           </div>
           <div className="homePage__cardText">
             <h3>Troubleshoot</h3>
@@ -60,8 +83,8 @@ function HomePage() {
             <Link to='/ChatBotPage'><img src={tools} alt="Tools" className="homePage__img" /></Link>
           </div>
           <div className="homePage__cardText">
-          <h3>ChatBot (Under Construction)</h3>
-          <p>Ask me questions!</p>
+            <h3>ChatBot (Under Construction)</h3>
+            <p>Ask me questions!</p>
           </div>
         </div>
       </section>

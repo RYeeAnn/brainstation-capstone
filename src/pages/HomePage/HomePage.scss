@@ -88,11 +88,37 @@ body {
 .loginoutButton {
   display: flex;
   gap: 16px;
+  align-items: center;
   justify-content: end;
   height: 6vh;
   padding: 16px;
-}
 
-.profileImg {
-  border-radius: 16px;
+  .profileImg {
+    border-radius: 50%;
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Adjust the size as needed */
+  }
+
+  p {
+    font-size: 14px;
+    color: white;
+    margin: 0;
+  }
+
+  .logoutButton, .loginButton {
+    background-color: #4CAF50; /* Green color, you can change it */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #45a049; /* Darker green color on hover, you can change it */
+    }
+  }
 }

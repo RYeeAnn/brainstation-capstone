@@ -17,7 +17,7 @@ function App() {
     <Auth0Provider
       domain={domain}
       clientId={clientId}
-      redirectUri="https://cruisin.netlify.app/"
+      redirect_uri="https://cruisin.netlify.app/"
     >
       <div className="app">
         <BrowserRouter>

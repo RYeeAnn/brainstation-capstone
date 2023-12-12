@@ -7,17 +7,17 @@ import WarningLightsPage from './pages/WarningLightsPage/WarningLightsPage';
 import ChatBotPage from './pages/ChatBotPage/ChatBotPage';
 import TroubleshootPage from './pages/TroubleshootPage/TroubleshootPage';
 import { Auth0Provider } from '@auth0/auth0-react'; // Import Auth0Provider
-import AuthConfig from './authConfig';
 
 function App() {
 
-  const { domain, clientId, redirect_uris } = AuthConfig;
+  const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+  const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
   return (
     <Auth0Provider
       domain={domain}
       clientId={clientId}
-      redirect_uri={redirect_uris}
+      redirectUri="https://cruisin.netlify.app/"
     >
       <div className="app">
         <BrowserRouter>

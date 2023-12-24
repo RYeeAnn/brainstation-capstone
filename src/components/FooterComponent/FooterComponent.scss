@@ -1,21 +1,33 @@
-@use '../../partials/styles/mixins.scss' as *;
-@use '../../partials/styles/variables.scss' as *;
+// FooterComponent.scss
 
 .footer {
-  background-color: silver;
-  color: #0ff;
+  background-color: #282c35; /* Dark background color */
+  color: #ffffff; /* Text color */
   text-align: center;
-  position: relative;
-  overflow: hidden;
-
-  .footer__content {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
-
-    &--description {
-      display: flex;
-      justify-content: space-around;
-    }
-  }
+  padding: 2rem 0; /* Add padding for better spacing */
 }
+
+.footer__content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer__content--description {
+  display: flex;
+  justify-content: center; /* Center the icons horizontally */
+  align-items: center; /* Center the icons vertically */
+  gap: 20px; /* Add some space between the icons */
+}
+
+.footer__content--icon {
+  width: 40px; /* Adjust icon size */
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Add smooth transition for hover effects */
+}
+
+.footer__content--icon:hover {
+  transform: scale(1.2); /* Enlarge the icon on hover */
+  filter: brightness(1.5); /* Add a brightness effect on hover */
+}
+

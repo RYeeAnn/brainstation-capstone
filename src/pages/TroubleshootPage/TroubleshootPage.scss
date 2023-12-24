@@ -12,7 +12,6 @@
 .troubleshoot {
     display: flex;
     flex-direction: column;
-    margin: 16px;
 
 
     &__title {
@@ -387,5 +386,9 @@
 .Toastify__toast {
   background: linear-gradient(to right, #001f3f, #0099ff);
   color: white;
+}
+
+.darkmode {
+  margin: 16px;
 }
   

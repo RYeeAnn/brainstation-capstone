@@ -12,7 +12,6 @@
 /* WarningLightsPage.scss */
 .warningLights {
   text-align: center;
-  margin: 16px;
 
   h1 {
     font-size: 28px;
@@ -160,4 +159,8 @@
   @include tablet {
     width: 20%;
   }
+}
+
+.darkmode {
+  margin: 16px;
 }

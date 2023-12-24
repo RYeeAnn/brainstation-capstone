@@ -9,14 +9,21 @@ import gtr from "../../assets/purplegtr.jpg";
 import speedometer from "../../assets/speedo.jpg";
 import tools from "../../assets/tools.jpg";
 import { useAuth0 } from "@auth0/auth0-react";
+import Header from "../../components/Header/Header";
+import useWindowWidth from "../../Hooks/useWindowWidth";
 
 function HomePage() {
   const { isAuthenticated, loginWithRedirect, logout, user, isLoading } = useAuth0();
+  const windowWidth = useWindowWidth();
 
   return (
     <>
       <section className="homePage">
-        <HeaderComponent />
+      {windowWidth <= 768 ? (
+          <HeaderComponent />
+        ) : (
+          <Header />
+        )}
         <div className="loginoutButton">
           {isLoading ? (
             <p>Loading...</p>
@@ -83,7 +90,7 @@ function HomePage() {
             <Link to='/ChatBotPage'><img src={tools} alt="Tools" className="homePage__img" /></Link>
           </div>
           <div className="homePage__cardText">
-            <h3>ChatBot (Under Construction)</h3>
+            <h3>ChatBot</h3>
             <p>Ask me questions!</p>
           </div>
         </div>

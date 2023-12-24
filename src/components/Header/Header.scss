@@ -1,0 +1,78 @@
+// Header.scss
+
+.header {
+    background: linear-gradient(90deg, #554e4c, #252322);
+    color: #ffffff;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative; /* Add relative positioning for parallax effect */
+    overflow: hidden; /* Hide overflowing content for parallax effect */
+  }
+  
+  .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)); /* Overlay for parallax effect */
+    z-index: -1; /* Place behind content */
+  }
+  
+  .header__logo {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+    animation: bounce 1s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-15px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .header__nav {
+    margin-top: 15px;
+  }
+  
+  .header__link {
+    position: relative;
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+  }
+  
+  .header__link::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #0088ff; /* Underline color */
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0); /* Initially set to scale 0 */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+  }
+  
+  .header__link:hover {
+    color: #0088ff;
+  }
+  
+  .header__link:hover::before {
+    transform: scaleX(1); /* Scale up on hover */
+    transform-origin: bottom left;
+  }
+  

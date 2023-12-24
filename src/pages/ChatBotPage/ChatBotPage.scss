@@ -5,7 +5,6 @@
 .chatbot {
 
   text-align: center;
-  margin: 16px;
 
       &.dark-mode {
         background-color: #1a1a1a; /* Dark background color */
@@ -119,4 +118,6 @@
     justify-content: end;
   }
 
-  
+  .darkmode {
+    margin: 16px;
+  }  

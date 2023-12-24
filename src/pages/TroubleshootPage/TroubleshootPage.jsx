@@ -4,6 +4,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { useSpring, animated } from "react-spring";
 import axios from "axios";
 import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
+import Header from "../../components/Header/Header";
+import useWindowWidth from "../../Hooks/useWindowWidth";
 import "./TroubleshootPage.scss";
 import trash from "../../assets/trash.svg";
 import heart from "../../assets/heart.svg";
@@ -24,6 +26,7 @@ function TroubleshootPage() {
   const [darkMode, setDarkMode] = useState(false);
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [commentToDelete, setCommentToDelete] = useState(null);
+  const windowWidth = useWindowWidth();
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -212,7 +215,11 @@ function TroubleshootPage() {
   return (
     <section className={`troubleshoot ${darkMode ? "dark-mode" : ""}`}>
       <div className="troubleshoot__header">
-        <HeaderComponent headerClass={"lightBlue-header"} />
+      {windowWidth <= 768 ? (
+          <HeaderComponent />
+        ) : (
+          <Header />
+        )}
         <ToastContainer />
       </div>
       <div className="troubleshoot__question">

@@ -5,11 +5,14 @@ import { useSpring, animated } from "react-spring";
 import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
 import "./ChatBotPage.scss";
 import FooterComponent from "../../components/FooterComponent/FooterComponent";
+import Header from "../../components/Header/Header";
+import useWindowWidth from "../../Hooks/useWindowWidth";
 
 function ChatBotPage() {
   const [darkMode, setDarkMode] = useState(false);
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const windowWidth = useWindowWidth();
 
   const messagesEndRef = useRef(null);
 
@@ -113,7 +116,11 @@ function ChatBotPage() {
   return (
     <section className={`chatbot ${darkMode ? "dark-mode" : ""}`}>
       <div>
-        <HeaderComponent headerClass={"yellow-header"} />
+      {windowWidth <= 768 ? (
+          <HeaderComponent />
+        ) : (
+          <Header />
+        )}
       </div>
       <animated.svg className="darkmode"
         xmlns="http://www.w3.org/2000/svg"
@@ -170,7 +177,7 @@ function ChatBotPage() {
       </animated.svg>
 
       <div>
-        <h1>Under Construction</h1>
+        <h1>Ask me questions!</h1>
       </div>
 
       <div className="container">

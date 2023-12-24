@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
+import Header from "../../components/Header/Header";
+import useWindowWidth from "../../Hooks/useWindowWidth";
 import "./WarningLightsPage.scss";
 import absIcon from "../../assets/ABS-light.png";
 import airbagIcon from "../../assets/airbag-indicator.png";
@@ -26,6 +28,7 @@ import FooterComponent from "../../components/FooterComponent/FooterComponent";
 function WarningLightsPage() {
   const [selectedWarning, setSelectedWarning] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
+  const windowWidth = useWindowWidth();
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -232,7 +235,11 @@ function WarningLightsPage() {
   return (
     <section className={`warningLights ${darkMode ? "dark-mode" : ""}`}>
       <div className="WarningLights__header">
-        <HeaderComponent headerClass={"red-header"} />
+        {windowWidth <= 768 ? (
+          <HeaderComponent />
+        ) : (
+          <Header />
+        )}
       </div>
       <animated.svg className="darkmode"
         xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
+import Header from "../../components/Header/Header";
+import useWindowWidth from "../../Hooks/useWindowWidth";
 import "./MaintenancePage.scss";
 import engineOil from "../../assets/engine-oil.png"
 import diagnosticTool from "../../assets/diagnostic-tool.png"
@@ -24,6 +26,7 @@ import FooterComponent from "../../components/FooterComponent/FooterComponent";
 function MaintenancePage() {
   const [selectedMaintenance, setSelectedMaintenance] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
+  const windowWidth = useWindowWidth();
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -348,7 +351,11 @@ function MaintenancePage() {
   return (
     <section className={`maintenance ${darkMode ? "dark-mode" : ""}`}>
       <div className="maintenance__header">
-        <HeaderComponent headerClass="blue-header" />
+      {windowWidth <= 768 ? (
+          <HeaderComponent />
+        ) : (
+          <Header />
+        )}
       </div>
       <animated.svg className="darkmode"
         xmlns="http://www.w3.org/2000/svg"

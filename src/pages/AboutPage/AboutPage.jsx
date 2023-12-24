@@ -1,71 +1,74 @@
 // AboutPage.jsx
-import React from 'react';
+import React from "react";
 import { useSpring, animated } from "react-spring";
 import { useState, useEffect } from "react";
-import HeaderComponent from '../../components/HeaderComponent/HeaderComponent';
-import './AboutPage.scss';
-import profileImage from '../../assets/ryan.png'; 
-import me from "../../assets/me.png"
-import FooterComponent from '../../components/FooterComponent/FooterComponent';
+import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
+import "./AboutPage.scss";
+import profileImage from "../../assets/ryan.png";
+import me from "../../assets/me.png";
+import FooterComponent from "../../components/FooterComponent/FooterComponent";
+import Header from "../../components/Header/Header";
+import useWindowWidth from "../../Hooks/useWindowWidth";
 
 function AboutPage() {
-
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }, []);
-  
-    const [darkMode, setDarkMode] = useState(false);
 
-    const properties = {
-        dark: {
-          r: 9,
-          transform: "rotate(40deg)",
-          cx: 12,
-          cy: 4,
-          opacity: 0,
-        },
-        light: {
-          r: 5,
-          transform: "rotate(90deg)",
-          cx: 30,
-          cy: 0,
-          opacity: 1,
-        },
-        springConfig: { mass: 4, tension: 250, friction: 35 },
-      };
-    
-      const { r, transform, cx, cy, opacity } =
-        properties[darkMode ? "dark" : "light"];
-    
-      const svgContainerProps = useSpring({
-        transform,
-        config: properties.springConfig,
-      });
-      const centerCircleProps = useSpring({
-        r,
-        config: properties.springConfig,
-      });
-      const maskedCircleProps = useSpring({
-        cx,
-        cy,
-        config: properties.springConfig,
-      });
-      const linesProps = useSpring({
-        opacity,
-        config: properties.springConfig,
-      });
-    
-      const toggleDarkMode = () => {
-        setDarkMode((previous) => !previous);
-      };
+  const [darkMode, setDarkMode] = useState(false);
+  const windowWidth = useWindowWidth();
 
-    return (
-        <section className={`about ${darkMode ? "dark-mode" : ""}`}>
-            <div className="about__header">
-                <HeaderComponent headerClass={"black-header"} />
-            </div>
-            <div className={`about__content ${darkMode ? "dark-mode" : ""}`}>
-            <animated.svg className="darkmode"
+  const properties = {
+    dark: {
+      r: 9,
+      transform: "rotate(40deg)",
+      cx: 12,
+      cy: 4,
+      opacity: 0,
+    },
+    light: {
+      r: 5,
+      transform: "rotate(90deg)",
+      cx: 30,
+      cy: 0,
+      opacity: 1,
+    },
+    springConfig: { mass: 4, tension: 250, friction: 35 },
+  };
+
+  const { r, transform, cx, cy, opacity } =
+    properties[darkMode ? "dark" : "light"];
+
+  const svgContainerProps = useSpring({
+    transform,
+    config: properties.springConfig,
+  });
+  const centerCircleProps = useSpring({
+    r,
+    config: properties.springConfig,
+  });
+  const maskedCircleProps = useSpring({
+    cx,
+    cy,
+    config: properties.springConfig,
+  });
+  const linesProps = useSpring({
+    opacity,
+    config: properties.springConfig,
+  });
+
+  const toggleDarkMode = () => {
+    setDarkMode((previous) => !previous);
+  };
+
+  return (
+    <section className={`about ${darkMode ? "dark-mode" : ""}`}>
+      <div className="about__header">
+        {windowWidth <= 768 ? <HeaderComponent /> : <Header />}
+      </div>
+      <div className={`about__content ${darkMode ? "dark-mode" : ""}`}>
+        <animated.svg
+          className="darkmode"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -118,22 +121,27 @@ function AboutPage() {
             </svg>
           </animated.g>
         </animated.svg>
-                <div className="about__image">
-                    <img src={profileImage} alt="Profile" />
-                </div>
-                <div className={`about__text ${darkMode ? "dark-mode" : ""}`}>
-                    <h2>About Me</h2>
-                    <p>
-                        Hello! I'm Ryan, a passionate car enthusiast and love to DIY my own vehicle. I have a deep love for cars and a strong desire to help people understand the ins and outs of vehicle maintenance.
-                    </p>
-                    <p>
-                        My mission is to provide clear and practical information to empower car owners to take control of their vehicle's upkeep. Whether it's troubleshooting common issues or learning the basics of maintenance, I'm here to guide you every step of the way.
-                    </p>
-                </div>
-            </div>
-            <FooterComponent />
-        </section>
-    );
+        <div className="about__image">
+          <img src={profileImage} alt="Profile" />
+        </div>
+        <div className={`about__text ${darkMode ? "dark-mode" : ""}`}>
+          <h2>About Me</h2>
+          <p>
+            Hello! I'm Ryan, a passionate car enthusiast and love to DIY my own
+            vehicle. I have a deep love for cars and a strong desire to help
+            people understand the ins and outs of vehicle maintenance.
+          </p>
+          <p>
+            My mission is to provide clear and practical information to empower
+            car owners to take control of their vehicle's upkeep. Whether it's
+            troubleshooting common issues or learning the basics of maintenance,
+            I'm here to guide you every step of the way.
+          </p>
+        </div>
+      </div>
+      <FooterComponent />
+    </section>
+  );
 }
 
 export default AboutPage;

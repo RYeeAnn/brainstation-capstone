@@ -7,12 +7,14 @@ import "./ChatBotPage.scss";
 import FooterComponent from "../../components/FooterComponent/FooterComponent";
 import Header from "../../components/Header/Header";
 import useWindowWidth from "../../Hooks/useWindowWidth";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function ChatBotPage() {
   const [darkMode, setDarkMode] = useState(false);
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const windowWidth = useWindowWidth();
+  const { isAuthenticated, user } = useAuth0();
 
   const messagesEndRef = useRef(null);
 
@@ -187,7 +189,7 @@ function ChatBotPage() {
               <div
                 key={index}
                 className={`message ${msg.type}`}
-              >{`${msg.type === 'user' ? 'User' : 'RyanBot'}: ${msg.text}`}</div>
+              >{`${msg.type === 'user' ? (isAuthenticated ? user.name || 'User' : 'User') : 'Bot'}: ${msg.text}`}</div>
             ))}
           </div>
           <div className="message-input">

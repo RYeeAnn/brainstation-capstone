@@ -1,14 +1,6 @@
 @use '../../partials/styles/mixins.scss' as *;
 @use '../../partials/styles/variables.scss' as *;
 
-.lightBlue-header {
-  background: linear-gradient(to top, #FFFFFF, rgb(0, 85, 141));
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .troubleshoot {
     display: flex;
     flex-direction: column;

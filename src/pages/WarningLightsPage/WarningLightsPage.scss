@@ -1,14 +1,6 @@
 @use "../../partials/styles/mixins.scss" as *;
 @use "../../partials/styles/variables.scss" as *;
 
-.red-header {
-  background: linear-gradient(to top, #FFFFFF, #a00303);
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 /* WarningLightsPage.scss */
 .warningLights {
   text-align: center;

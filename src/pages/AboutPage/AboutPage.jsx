@@ -9,6 +9,8 @@ import me from "../../assets/me.png";
 import FooterComponent from "../../components/FooterComponent/FooterComponent";
 import Header from "../../components/Header/Header";
 import useWindowWidth from "../../Hooks/useWindowWidth";
+import ryan from '../../assets/ryan.jpg';
+import ryanSubie from '../../assets/ryansubie.png';
 
 function AboutPage() {
   useEffect(() => {
@@ -121,7 +123,7 @@ function AboutPage() {
             </svg>
           </animated.g>
         </animated.svg>
-        <div className="about__image">
+        {/* <div className="about__image">
           <img src={profileImage} alt="Profile" />
         </div>
         <div className={`about__text ${darkMode ? "dark-mode" : ""}`}>
@@ -137,7 +139,42 @@ function AboutPage() {
             troubleshooting common issues or learning the basics of maintenance,
             I'm here to guide you every step of the way.
           </p>
+        </div> */}
+
+<div class="about-section story">
+    <div class="section-content">
+      <img src={profileImage} alt="" />
+        <div class="text-content">
+        <h2>About Me</h2>
+          <p>
+            Hello! I'm Ryan, a passionate car enthusiast and love to DIY my own
+            vehicle. I have a deep love for cars and a strong desire to help
+            people understand the ins and outs of vehicle maintenance.
+          </p>
         </div>
+    </div>
+</div>
+
+<div class="about-section mission">
+    <div class="section-content">
+      <img src={ryanSubie} alt="" />
+        <div class="text-content">
+            <h2>My Mission</h2>
+            <p>At Cruisin, My mission is to simplify the complexities of vehicle maintenance. While traditional vehicle handbooks can be overwhelming, and online sources often intricate, I aim to provide drivers with straightforward answers to their concerns. With Cruisin, finding solutions to your vehicle-related queries is as easy as a snap of your fingers.</p>
+        </div>
+    </div>
+</div>
+
+<div class="about-section team">
+    <div class="team-members">
+        <div class="team-member">
+          <img src={ryan} alt="" />
+            <h3>Ryan Yee</h3>
+            <p>Developer</p>
+        </div>
+    </div>
+</div>
+        
       </div>
       <FooterComponent />
     </section>

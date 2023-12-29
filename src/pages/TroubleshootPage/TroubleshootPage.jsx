@@ -29,12 +29,12 @@ function TroubleshootPage() {
   const windowWidth = useWindowWidth();
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
     axios
-      .get(`${PORT}/troubleshootPage/issues`)
+      .get(`${PORT}/issues`)
       .then((response) => {
         setIssues(response.data);
       })
@@ -45,7 +45,7 @@ function TroubleshootPage() {
 
   useEffect(() => {
     axios
-      .get(`${PORT}/troubleshootPage/comments`)
+      .get(`${PORT}/comments`)
       .then((response) => {
         setUserComments(response.data);
       })
@@ -60,7 +60,7 @@ function TroubleshootPage() {
 
   const handleSubmit = () => {
     axios
-      .post(`${PORT}/troubleshootPage`, { question: selectedIssue })
+      .post(`${PORT}`, { question: selectedIssue })
       .then((response) => {
         setResponse(response.data);
       })
@@ -83,27 +83,26 @@ function TroubleshootPage() {
       });
     };
 
-  if (!userName || !userComment) {
-    // Check if an error notification is already displayed
-    const existingErrorToast = toast.isActive("error-toast");
+    if (!userName || !userComment) {
+      const existingErrorToast = toast.isActive("error-toast");
 
-    if (!existingErrorToast) {
-      toast.error("Please fill in both your name and comment.", {
-        position: toast.POSITION.TOP_RIGHT,
-        toastId: "error-toast", // Set a unique toastId
-      });
-    }
+      if (!existingErrorToast) {
+        toast.error("Please fill in both your name and comment.", {
+          position: toast.POSITION.TOP_RIGHT,
+          toastId: "error-toast",
+        });
+      }
       return;
     }
 
     axios
-      .post(`${PORT}/troubleshootPage/comments`, commentData)
+      .post(`${PORT}/comments`, commentData)
       .then(() => {
         setUserComment("");
         setUserName("");
         toastMessage();
 
-        return axios.get(`${PORT}/troubleshootPage/comments`);
+        return axios.get(`${PORT}/comments`);
       })
       .then((response) => {
         setUserComments(response.data);
@@ -114,11 +113,9 @@ function TroubleshootPage() {
   };
 
   const handleLikeComment = (commentId) => {
-    // Send a request to the server to update the likes count
     axios
-      .post(`${PORT}/troubleshootPage/like/${commentId}`)
+      .post(`${PORT}/like/${commentId}`)
       .then(() => {
-        // Update the likes in the component's state
         setUserComments((prevComments) =>
           prevComments.map((comment) =>
             comment.id === commentId
@@ -129,7 +126,6 @@ function TroubleshootPage() {
       })
       .catch((error) => {
         console.error("Error liking comment:", error);
-        // Handle error as needed
       });
   };
 
@@ -139,10 +135,9 @@ function TroubleshootPage() {
   };
 
   const handleConfirmDelete = () => {
-    // Delete the comment using the commentId stored in state
     const commentIdToDelete = commentToDelete;
     axios
-      .delete(`${PORT}/troubleshootPage/comments/${commentIdToDelete}`)
+      .delete(`${PORT}/comments/${commentIdToDelete}`)
       .then(() => {
         setUserComments((prevComments) =>
           prevComments.filter((comment) => comment.id !== commentIdToDelete)
@@ -158,13 +153,11 @@ function TroubleshootPage() {
         });
       });
 
-    // Reset the state
     setShowDeleteConfirmation(false);
     setCommentToDelete(null);
   };
 
   const handleCancelDelete = () => {
-    // Reset the state
     setShowDeleteConfirmation(false);
     setCommentToDelete(null);
   };
@@ -215,7 +208,7 @@ function TroubleshootPage() {
   return (
     <section className={`troubleshoot ${darkMode ? "dark-mode" : ""}`}>
       <div className="troubleshoot__header">
-      {windowWidth <= 768 ? (
+        {windowWidth <= 768 ? (
           <HeaderComponent />
         ) : (
           <Header />
@@ -223,7 +216,8 @@ function TroubleshootPage() {
         <ToastContainer />
       </div>
       <div className="troubleshoot__question">
-        <animated.svg className="darkmode"
+        <animated.svg
+          className="darkmode"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -241,7 +235,6 @@ function TroubleshootPage() {
         >
           <mask id="myMask2">
             <rect x="0" y="0" width="100%" height="100%" fill="white" />
-            {/* <animated.circle style={maskedCircleProps} r="9" fill="black" /> */}
           </mask>
           <animated.circle
             cx="12"
@@ -277,38 +270,46 @@ function TroubleshootPage() {
           </animated.g>
         </animated.svg>
         <h2 className="troubleshoot__title">Let's try to find a solution!</h2>
-<div className="troubleshoot__selectandbutton">
-  <select
-    className="troubleshoot__selectandbutton--text"
-    value={selectedIssue}
-    onChange={handleIssueChange}
-  >
-    <option value="">Select an issue</option>
-    {issues.map((issue) => (
-      <option key={issue.id}>{issue.problem}</option>
-    ))}
-  </select>
-  <button onClick={handleSubmit}>Submit</button>
-</div>
-<div className="troubleshoot__response--placeholder">
-  {selectedIssue ? (
-    response.length > 0 ? (
-      response.map((solution, index) => (
-        <div className="troubleshoot__solutions--placeholder" key={index}>
-          {/* ... Your response content */}
+        <div className="troubleshoot__selectandbutton">
+          <select
+            className="troubleshoot__selectandbutton--text"
+            value={selectedIssue}
+            onChange={handleIssueChange}
+          >
+            <option value="">Select an issue</option>
+            {issues.map((issue) => (
+              <option key={issue.id}>{issue.problem}</option>
+            ))}
+          </select>
+          <button onClick={handleSubmit}>Submit</button>
         </div>
-      ))
-    ) : (
-      <div className="troubleshoot__placeholder--response">
-        <p>Please click submit. <img src={smile} alt="Smile" /></p>
-      </div>
-    )
-  ) : (
-    <div className="troubleshoot__placeholder--response">
-      <p>Select an issue to see the response. <img src={triangle} alt="Triangle" /></p>
-    </div>
-  )}
-</div>
+        <div className="troubleshoot__response--placeholder">
+          {selectedIssue ? (
+            response.length > 0 ? (
+              response.map((solution, index) => (
+                <div
+                  className="troubleshoot__solutions--placeholder"
+                  key={index}
+                >
+                  {/* ... Your response content */}
+                </div>
+              ))
+            ) : (
+              <div className="troubleshoot__placeholder--response">
+                <p>
+                  Please click submit. <img src={smile} alt="Smile" />
+                </p>
+              </div>
+            )
+          ) : (
+            <div className="troubleshoot__placeholder--response">
+              <p>
+                Select an issue to see the response.{" "}
+                <img src={triangle} alt="Triangle" />
+              </p>
+            </div>
+          )}
+        </div>
       </div>
       {response.length > 0 && (
         <div className="troubleshoot__response">
@@ -323,22 +324,21 @@ function TroubleshootPage() {
               <h1 className="troubleshoot__solutions--instructions">
                 Instructions:
               </h1>
-              {/* Dangerously syntax to my instructions into ordered list*/}
               <div
                 className="troubleshoot__solutions--instructions--list"
                 dangerouslySetInnerHTML={{ __html: solution.instructions }}
               />
-              {/* {solution.instructions
-                .split("\n\n")
-                .map((paragraph, paragraphIndex) => (
-                  <p key={paragraphIndex}>{paragraph}</p>
-                ))} */}
             </div>
           ))}
         </div>
       )}
       <div className="troubleshoot__commentsTitle">
-        Leave a feedback below! <img className="troubleshoot__commentsTitle--img" src={feedback} alt="Feedback" />
+        Leave a feedback below!{" "}
+        <img
+          className="troubleshoot__commentsTitle--img"
+          src={feedback}
+          alt="Feedback"
+        />
       </div>
       <form
         onSubmit={handleCommentSubmit}
@@ -407,11 +407,17 @@ function TroubleshootPage() {
         ))}
       </div>
       {showDeleteConfirmation && (
-        <div className={`delete-confirmation ${darkMode ? "dark-mode" : ""}`}>
-          <p className="delete-confirmation__text">Are you sure you want to delete this comment?</p>
+        <div
+          className={`delete-confirmation ${
+            darkMode ? "dark-mode" : ""
+          }`}
+        >
+          <p className="delete-confirmation__text">
+            Are you sure you want to delete this comment?
+          </p>
           <div className="delete-confirmation__buttons">
-          <button onClick={handleConfirmDelete}>Yes</button>
-          <button onClick={handleCancelDelete}>No</button>
+            <button onClick={handleConfirmDelete}>Yes</button>
+            <button onClick={handleCancelDelete}>No</button>
           </div>
         </div>
       )}

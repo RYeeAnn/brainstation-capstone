@@ -76,7 +76,7 @@ function HomePage() {
             <p>Learn about essential car maintenance to keep your vehicle running smoothly.</p>
           </div>
         </div>
-        <div className="homePage__card">
+        {/* <div className="homePage__card">
           <div className="homePage__imgContainer">
             <Link to='/troubleshootPage'><img src={gtr} alt="GTR" className="homePage__img" /></Link>
           </div>
@@ -84,7 +84,7 @@ function HomePage() {
             <h3>Troubleshoot</h3>
             <p>Explore troubleshooting guides for common car problems.</p>
           </div>
-        </div>
+        </div> */}
         <div className="homePage__card">
           <div className="homePage__imgContainer">
             <Link to='/ChatBotPage'><img src={tools} alt="Tools" className="homePage__img" /></Link>
@@ -96,7 +96,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="footer">
+      <section>
         <FooterComponent />
       </section>
     </>

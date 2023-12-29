@@ -14,7 +14,7 @@ import triangle from "../../assets/triangle.png";
 import smile from "../../assets/smile.png";
 import FooterComponent from "../../components/FooterComponent/FooterComponent";
 
-const PORT = 'https://cruisin-df8cc0f5b5d6.herokuapp.com/';
+const PORT = 'https://cruisin-df8cc0f5b5d6.herokuapp.com';
 
 function TroubleshootPage() {
   const [selectedIssue, setSelectedIssue] = useState("");

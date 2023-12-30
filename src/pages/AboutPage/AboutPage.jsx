@@ -141,7 +141,7 @@ function AboutPage() {
           </p>
         </div> */}
 
-<div class="about-section story">
+<div class="about__section-story">
     <div class="section-content">
       <img src={profileImage} alt="" />
         <div class="text-content">
@@ -155,7 +155,7 @@ function AboutPage() {
     </div>
 </div>
 
-<div class="about-section mission">
+<div class="about__section-mission">
     <div class="section-content">
       <img src={ryanSubie} alt="" />
         <div class="text-content">

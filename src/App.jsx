@@ -7,6 +7,7 @@ import WarningLightsPage from './pages/WarningLightsPage/WarningLightsPage';
 import ChatBotPage from './pages/ChatBotPage/ChatBotPage';
 import TroubleshootPage from './pages/TroubleshootPage/TroubleshootPage';
 import { Auth0Provider } from '@auth0/auth0-react'; // Import Auth0Provider
+import ProfileEditPage from './pages/ProfileEditPage/ProfileEditPage';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             <Route path='/MaintenancePage' element={<MaintenancePage />} />
             <Route path='/TroubleshootPage' element={<TroubleshootPage />} />
             <Route path='/ChatBotPage' element={<ChatBotPage />} />
+            <Route path='/ProfileEditPage' element={<ProfileEditPage />} />
           </Routes>
         </BrowserRouter>
       </div>

@@ -36,6 +36,7 @@ function HomePage() {
                   <button className="logoutButton" onClick={() => logout({ returnTo: window.location.origin })}>
                     Logout
                   </button>
+                  <Link to='/ProfileEditPage'>Edit Profile</Link>
                 </>
               ) : (
                 <button className="loginButton" onClick={() => loginWithRedirect()}>

@@ -97,6 +97,9 @@ function HomePage() {
         </div>
       </section>
 
+      <section className="homePage__contact">
+      </section>
+
       <section>
         <FooterComponent />
       </section>

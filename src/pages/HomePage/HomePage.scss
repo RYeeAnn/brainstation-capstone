@@ -53,6 +53,9 @@ body {
 
   &__main {
 
+    background-color: black;
+    gap: 1rem;
+
     @include tablet {
       display: flex;
     }
@@ -63,11 +66,24 @@ body {
     background-color: black;
     text-align: center;
     padding-bottom: 16px;
+    transition: filter 0.3s ease-out, transform 0.3s ease-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+    &:hover {
+      filter: brightness(70%);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+  
+    &__cardText {
+      font-size: 10px;
+  
+      &:hover {
+        font-size: 10px;
+      }
+    }
   }
-
-  &__cardText {
-    font-size: 10px;
-  }
+  
 
   &__img {
     width: 100%;

@@ -179,7 +179,7 @@ function ChatBotPage() {
       </animated.svg>
 
       <div>
-        <h1>Ask me questions!</h1>
+        <h1>*Chatbot is currently a prototype*</h1>
       </div>
 
       <div className="container">
